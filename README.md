@@ -6,7 +6,8 @@ Tienda destinada a la venta de electrodoméstico para los usuarios y sus hogares
 Brian Fernandez,19 años, Perfil : Brian00412.   
 Montoya Indira Sol Elena,19 años, perfil : indijiji  
 Félix Solis, 18 años, Perfil : FelixSolis
- 
+## zona de trabajo
+https://trello.com/b/KNjXokP8/pagina-web
 
 ## Sitios de los que nos inspiramos
 ### https://www.musimundo.com/
