@@ -1,5 +1,5 @@
 *{
-    margin: 0x;
+    margin: 0;
     padding: 0;   
     font-family: 'poppins' , sans-serif; 
 }
@@ -9,35 +9,26 @@ body{
      color: white;
     
 }
+header{
+    background-color: #000000;
+    width: 100%;
+}
 
 /****  Home ****/
 
 
-h3{
-    font-size: 24px;
-}
 
-p{
-    font-size: 12px;
-}
-
-header{
-    background-color: #000000;
-}
 header div.top-header p{
     width: 100%;
     text-align: center;
-    
     display: flex;
    
 }
 
 .layout {
     width: 100%;
-  
     display: flex;
     gap: 16px;
-  
     justify-content: center;
   }
   
@@ -50,32 +41,26 @@ header div.top-header p{
 }
 
 .form{
-   width: 30%;
-   display: flex;
+   width: 100%;
+   display:flex;
+   align-items: center;
+ justify-content: center;
 }
 .imput{
+    position:relative;
+    top:20px;
     display:flex;
     align-items: center;
   justify-content: center;
 }    
-
-
-header div.logo{
-    padding: 10px;
-}
-
-header nav{
-    font-size: 12px;
-    margin-left: 20px;
-}
-
-header ul li{
-    list-style-type: none;
-    
-}
 .obciones {
-    align-content: center;
     
+    display:flex;
+    align-items: center;
+  justify-content: space-around;
+  position:relative;
+    left:25%;
+
 }
 header ul li a{
     text-decoration: none;
@@ -84,22 +69,27 @@ header ul li a{
 }
 
 header .form .input{
+    position:relative;
+    bottom:60px;
     background-color: #FFF;
     border: 1px solid #000;
     outline: none;
     color: #666;
-    padding: 2px;
+    padding: 4px;
+    width: 40%;
     
-        display: flex;
-        gap: 16px;
+    display:flex;
+    align-items: center;
+  justify-content: space-around;
       
 }
 
 header .form .submit{
+    text-align: left;
     background-color: #FFF;
     border: 1px solid #000;
     color: #666;
-    width: 10%;
+    width: 50%;
 }
 
 div.burger-menu{
@@ -117,8 +107,3 @@ div.burger-menu i{
     width: 40px;
 }
 
-.obciones {
-    display:flex;
-    align-items: center;
-  justify-content: center;
-}
