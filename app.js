@@ -16,4 +16,7 @@ app.listen(8080, ()=>{
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });
+app.get('/', (req,res)=>{
+    res.sendFile(__dirname + '/views/home.html');
+});
 
