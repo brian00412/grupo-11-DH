@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-img {
-    width: 100px;
-}
-
 /* HEADER */
 
 header {
@@ -41,8 +37,12 @@ header {
 }
 
 .logo {
+    width: 100px;
     position: absolute;
     left: 30px;
+}
+.imglogo {
+    width: 100%;
 }
 
 .usuario {
@@ -85,7 +85,6 @@ header {
 
 main {
     background-image: linear-gradient(to right, #1ee9ff, #00bd80);
-    /* color: white; */
     padding: 5px;
 }
 
@@ -194,6 +193,7 @@ footer {
     justify-self: start;
     width: 100%;
 }
+
 .red {
     padding: 3px;
     margin: 2px;
@@ -204,19 +204,24 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
 #whatsapp {
     color: rgb(22, 209, 25);
 
 }
+
 #facebook {
     color: blue;
 }
+
 #instagram {
     color: #c70c9e;
 }
+
 #twitter {
     color: rgb(34, 153, 199);
 }
+
 #youtube {
     color: red;
 }
