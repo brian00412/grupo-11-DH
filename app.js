@@ -20,3 +20,6 @@ app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });
 
+app.get("/productDetail", (req, res)=>{
+    res.sendFile(__dirname + "/views/productDetail.html");
+});
