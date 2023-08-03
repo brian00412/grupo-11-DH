@@ -128,24 +128,24 @@ main {
     padding-bottom: 5px;
     padding: 5px 3px;
     width: 100%;
-    border: 2px #27f4ea solid;
+    border: 2px #ffffff solid;
     background-image: linear-gradient(to left, #1ee9ff, #00bd80);
 }
 
 .precio {
     padding: 5px 3px;
     width: 30%;
-    border: 2px #27f4ea solid;
+    border: 2px #ffffff solid;
     background-image: linear-gradient(to left, #1ee9ff, #00bd80);
 }
 
 .descuento {
-    color: rgb(13, 0, 255);
+    color: black;
     padding: 5px 3px;
     width: 30%;
     display: flex;
     justify-content: center;
-    border: 2px #27f4ea solid;
+    border: 2px #ffffff solid;
     background-image: linear-gradient(to left, #1ee9ff, #00bd80);
 }
 
@@ -157,6 +157,8 @@ main {
 .top {
     font-weight: bold;
     margin: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 ul {
@@ -176,6 +178,10 @@ ul {
     padding: 5px;
     position: relative;
     right: 10px;
+}
+
+.textA {
+    display: none;
 }
 
 .agregar {
@@ -245,6 +251,10 @@ footer p {
     .form input {
         width: 300px;
     }
+
+    .textA {
+        display: inline;
+    }
 }
 
 @media (min-width: 769px) {
@@ -257,21 +267,29 @@ footer p {
     }
 
     .logo {
-        max-width: 160px;
+        max-width: 200px;
+        padding-top: 1%;
     }
 
     .usuario {
         right: 45px;
+        font-size: 20px;
     }
 
     .carrito {
         position: relative;
         right: 10px;
+        font-size: 20px;
     }
 
     .form {
         position: absolute;
         top: 15px;
+        font-size: 20px;
+    }
+    .form input {
+        font-size: 22px;
+        width: 350px;    
     }
 
     .menu {
@@ -280,15 +298,18 @@ footer p {
 
     .menulist {
         display: contents;
-
+        font-size: 20px;
+        width: 90%;
+        margin: auto;
     }
 
     .opciones {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        width: 90%;
     }
-
+    .opciones li,
     .opciones li a {
         text-decoration: none;
         color: #5cffff;
@@ -314,6 +335,7 @@ footer p {
     .carrusel {
         scroll-snap-type: none;
         flex-direction: column;
+        overflow-x: auto;
         background-color: rgba(0, 0, 0, 0);
         border: 0;
         position: absolute;
@@ -327,4 +349,36 @@ footer p {
         border: 1px blue solid;
     }
 
+    .titulo {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .precio,
+    .descuento {
+        font-size: 25px;
+    }
+
+    .caracteristicas {
+        font-size: 20px;
+    }
+
+    .top {
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .compra {
+        font-size: 25px;
+    }
+
+footer {
+    font-size: 25px;
+}
+    .red {
+        margin: 5px 10px;
+        width: 32px;
+    }
 }
