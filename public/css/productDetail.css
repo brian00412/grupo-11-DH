@@ -20,11 +20,12 @@ header {
     width: 100%;
     padding: 5px;
     position: relative;
+    align-items: center;
 }
 
 .menu {
     width: 20px;
-    height: 20px;
+    height: 30px;
     position: relative;
 }
 
@@ -41,6 +42,7 @@ header {
     position: absolute;
     left: 30px;
 }
+
 .imglogo {
     width: 100%;
 }
@@ -79,6 +81,10 @@ header {
     position: absolute;
     right: 5px;
     top: 2px;
+}
+
+.menulist {
+    display: none;
 }
 
 /* MAIN */
@@ -228,4 +234,97 @@ footer {
 
 footer p {
     color: white;
+}
+
+@media (min-width: 361px) {
+    .logo {
+        width: 20%;
+        min-width: 100px;
+    }
+
+    .form input {
+        width: 300px;
+    }
+}
+
+@media (min-width: 769px) {
+    header {
+        position: relative;
+    }
+
+    .topHeader {
+        justify-content: flex-end;
+    }
+
+    .logo {
+        max-width: 160px;
+    }
+
+    .usuario {
+        right: 45px;
+    }
+
+    .carrito {
+        position: relative;
+        right: 10px;
+    }
+
+    .form {
+        position: absolute;
+        top: 15px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menulist {
+        display: contents;
+
+    }
+
+    .opciones {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .opciones li a {
+        text-decoration: none;
+        color: #5cffff;
+    }
+
+    main {
+        position: relative;
+    }
+
+    .imgP {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        border: 2px blue solid;
+        background-color: white;
+        justify-content: flex-end;
+    }
+
+    .imgP img {
+        width: 80%;
+    }
+
+    .carrusel {
+        scroll-snap-type: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0);
+        border: 0;
+        position: absolute;
+        left: 5.7%;
+        top: 0.9%;
+    }
+
+    .img {
+        scroll-snap-align: none;
+        width: 12.48%;
+        border: 1px blue solid;
+    }
+
 }
