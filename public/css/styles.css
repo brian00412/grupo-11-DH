@@ -21,7 +21,49 @@ header{
 }
 
 /****  Home ****/
+.login-register-buttons button {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: rgb(28, 31, 199);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.login-register-buttons button a {
+    color: rgb(32, 157, 189);
+    text-decoration: none;
+}
+
+
+
+
+.login-register-buttons {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.login-register-buttons button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-register-buttons button a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+/***** boton register ****/
 
 
 header div.top-header p{
@@ -228,10 +270,11 @@ footer{
 /**** botones ****/
 .posicion-botones{
     display: flex;
-    justify-content: flex-end;
+    justify-content: end;
     position: relative;
     top: 30px ;
-    
+    align-items: flex-end;
+ 
     
 
 }
@@ -245,6 +288,10 @@ footer{
     border: #fff;
     margin-right: 18px;
    
+    position: relative;
+   top: 5px;
+   left: 10px;
+
 
 }
 

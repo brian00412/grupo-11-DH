@@ -32,6 +32,6 @@ app.get("/registerr", (req, res)=>{
 app.get('/contraolvidada', (req, res) => {
     res.sendFile(__dirname + '/views/contraolvidada.html');
   });
-app.get("/botones.html", (req, res)=>{
+app.get("/botones", (req, res)=>{
     res.sendFile(__dirname + "/views/botones.html");
 });
