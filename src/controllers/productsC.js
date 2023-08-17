@@ -7,6 +7,16 @@ const productController = {
     },
     editar: (req, res) => {
         res.render("editarProducto")
+    },
+    create: (req, res) => {
+        let nuevoProducto = {
+            nombre: req.body.name,
+            descripcion: req.body.description,
+            imagen: req.body.image,
+            categoria: req.body.category,
+            color: req.body.color,
+            precio: req.body.price,
+        }
     }
 }
 

@@ -6,5 +6,7 @@ routerProduct.get("/productDetail", productController.detalles);
 routerProduct.get("/crearProduct", productController.crear);
 routerProduct.get("/editarProducto", productController.editar);
 
+routerProduct.post("/crearProduct", productController.create);
+
 
 module.exports = routerProduct;
