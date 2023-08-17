@@ -1,7 +1,11 @@
 const express = require('express');
 const router = require('./routes');
+const routerProduct = require('./routes/productsR');
 const app = express();
 app.use(express.static('../public'));
+app.set("view engine", "ejs");
+app.set("views/products/");
+
 
 
 app.listen(8080, ()=>{
@@ -15,6 +19,8 @@ app.listen(8080, ()=>{
 });
 
 app.use('/', router);
+
+app.use("/", routerProduct)
 
 
 
