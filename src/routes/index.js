@@ -1,5 +1,5 @@
 const express = require('express');
-const { homecontroller, registercontroller, logincontroller, carritodecompras } = require('../controllers');
+const { homecontroller, registercontroller, logincontroller, carritodecompras, productCartcontroller } = require('../controllers');
 
 
 const router = express.Router();
@@ -8,6 +8,6 @@ const router = express.Router();
 router.get('/', homecontroller);
 router.get('/register', logincontroller);
 router.get('/login', registercontroller);
-router.get('/carrodecompras', carritodecompras);
+router.get('/productCart', productCartcontroller);
 
 module.exports = router ;
