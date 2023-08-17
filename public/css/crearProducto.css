@@ -2,6 +2,7 @@
     width: 90%;
     margin: auto;
     margin-top: 10px;
+    padding: 15px 0;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -32,13 +33,19 @@
     width: 90%;
     margin: auto;
 }
-.enviar {
+.enviar,
+.reset {
     background-color: white;
     border: 0;
     padding: 4px;
     border-radius: 8px;
 }
-
+ .editar {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    left: 10px;
+ }
 @media (min-width: 361px) {
     .crearP {
         width: 70%;
@@ -58,7 +65,7 @@
 @media (min-width: 769px) {
     .crearP {
         width: 50%;
-        padding: 15px 0;
+        
     }
     .h3 {
         font-size: 50px;
