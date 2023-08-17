@@ -4,7 +4,7 @@ const routerProduct = require('./routes/productsR');
 const app = express();
 app.use(express.static('../public'));
 app.set("view engine", "ejs");
-app.set("views/products/");
+app.set("views", "src/views/products");
 
 
 
@@ -22,11 +22,6 @@ app.use('/', router);
 
 app.use("/", routerProduct)
 
-
-
-app.get("/productDetail", (req, res)=>{
-    res.sendFile(__dirname + "/views/productDetail.html");
-});
 app.get('/contraolvidada', (req, res) => {
     res.sendFile(__dirname + '/views/contraolvidada.html');
   });
