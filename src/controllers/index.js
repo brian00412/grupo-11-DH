@@ -13,9 +13,13 @@ const logincontroller= (req, res) => {
     res.sendfile(path.resolve(__dirname, '../views/login.html'))
 }
 
+const carritodecompras= (req, res) => {
+    res.sendfile(path.resolve(__dirname, '../views/logincarrito.html'))
+}
 
 module.exports = {
     homecontroller ,
     registercontroller ,
-    logincontroller
+    logincontroller ,
+    carritodecompras
 }
