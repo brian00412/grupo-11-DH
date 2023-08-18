@@ -316,3 +316,43 @@ height: 20px;
     margin-right: 10px
 }
 
+/*************** ProducCart ***************/
+.container {
+width: 800px;
+ max-height: 100%;
+position: relative;
+right: 0;
+background-color: #000000; //elijan el color 
+padding: 2em;
+box-shadow:rgba(0,0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+top:50px;
+}
+.nav-card {
+font-size: 1.4rem;
+display: flex;
+justify-content: space-between;
+margin: 0 10px 0 10px;
+border-bottom: #e1e1e1;
+}
+            
+.nav-card li {
+list-style: none;
+padding: 1rem;
+font-weight: bold;
+}
+.boton-borrar {
+width: 50px;
+max-height: 100%;
+}
+.marcador-cantidad {
+height: 30px;
+font-size: 14px;
+text-align: center;
+width: 30px;
+}
+.forma-cart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em
+}
