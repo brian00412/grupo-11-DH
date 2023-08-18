@@ -2,11 +2,11 @@ const path = require('path')
 
 
 const homecontroller= (req, res) => {
-    res.sendfile(path.resolve(__dirname, '../views/home.html'))
+   res.render('home')
 }
 
 const registercontroller= (req, res) => {
-    res.sendfile(path.resolve(__dirname, '../views/register.html'))
+    res.render('reg')
 }
 
 const logincontroller= (req, res) => {
@@ -21,5 +21,5 @@ module.exports = {
     homecontroller ,
     registercontroller ,
     logincontroller ,
-    productCartcontroller
+    productCartcontroller,
 }
