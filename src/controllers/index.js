@@ -6,11 +6,11 @@ const homecontroller= (req, res) => {
 }
 
 const registercontroller= (req, res) => {
-    res.render('reg')
+    res.render('register')
 }
 
 const logincontroller= (req, res) => {
-    res.sendfile(path.resolve(__dirname, '../views/login.html'))
+    res.render('login')
 }
 
 const productCartcontroller= (req, res) => {

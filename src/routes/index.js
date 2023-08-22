@@ -7,8 +7,8 @@ const router = express.Router();
 
 
 router.get('/', homecontroller);
-router.get('/register', logincontroller);
-router.get('/login', registercontroller);
+router.get('/login', logincontroller);
+router.get('/register', registercontroller);
 router.get('/productCart', productCartcontroller);
 
 
