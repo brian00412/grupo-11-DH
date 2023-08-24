@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "nombre": "Monitor Gigabyte",
+        "descripcion": "",
+        "categoria": "Oferta",
+        "precio": 75000,
+        "descuento": 10,
+        "color": "Negro",
+        "imagen": "monitor gigabyte.png"
+    },
+    {
+        "id":2,
+        "nombre": "Teclado Mecanico",
+        "descripcion": "",
+        "categoria": "Oferta",
+        "precio": 45000,
+        "descuento": 20,
+        "color": "Negro",
+        "imagen": "tecladoMecanico.png" 
+    },
+    {
+        "id":3,
+        "nombre": "RX 6700 XT",
+        "descripcion": "",
+        "categoria": "Oferta",
+        "precio": 380000,
+        "descuento": 10,
+        "color": "Negro",
+        "imagen": "rx6700xt.jpg"
+    },
+    {
+        "id":4,
+        "nombre": "Volante Logitech",
+        "descripcion": "",
+        "categoria": "Oferta",
+        "precio": 140000,
+        "descuento": 10,
+        "color": "Negro",
+        "imagen": "volanteLogitech.png"
+    },
+    {
+        "id":5,
+        "nombre": "Notebook Rog Zephyrus Duo",
+        "descripcion": "",
+        "categoria": "Oferta",
+        "precio": 2553499,
+        "descuento": 10,
+        "color": "Negro",
+        "imagen": "rogZephyrusDuo.png"
+    }
+]
