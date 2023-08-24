@@ -14,7 +14,7 @@ const logincontroller= (req, res) => {
 }
 
 const productCartcontroller= (req, res) => {
-    res.sendfile(path.resolve(__dirname, '../views/productCart.html'))
+    res.render('productCart')
 }
 
 module.exports = {
