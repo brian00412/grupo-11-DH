@@ -1,24 +1,23 @@
-*{
+* {
     margin: 0;
-    padding: 0;   
-    font-family: 'poppins' , sans-serif; 
+    padding: 0;
+    font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-body{
-    background-image:linear-gradient(to right,#1ee9ff,#00bd80   ) ;
 
-     color: white;
-    
+body {
+    background-image: linear-gradient(to right, #1ee9ff, #00bd80);
+
+    color: white;
+
 }
-header{
+
+header {
     background-color: #000000;
     width: 100%;
 }
 
-.tamaño{
-    height: 400px;
-    width: 100%;
-}
+
 
 /****  Home ****/
 .login-register-buttons button {
@@ -66,11 +65,11 @@ header{
 /***** boton register ****/
 
 
-header div.top-header p{
+header div.top-header p {
     width: 100%;
     text-align: center;
     display: flex;
-   
+
 }
 
 .layout {
@@ -78,14 +77,16 @@ header div.top-header p{
     display: flex;
     gap: 16px;
     justify-content: center;
-  }
-  
-.grow1 { flex-grow: 1; }
+}
+
+.grow1 {
+    flex-grow: 1;
+}
 
 
-.img1{
+.img1 {
     width: 20%;
-    
+
 }
 
 
@@ -94,64 +95,67 @@ header div.top-header p{
     background-color: #ffffff;
     border-radius: 25px;
     margin: 0 auto;
-    border: 2px solid black; 
-    position:relative;
+    border: 2px solid black;
+    position: relative;
     top: 50px;
-    -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
-    
+    -webkit-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.75);
+
 }
 
-.img-1{
- width: 100%;
+.img-1 {
+    width: 100%;
 }
 
-.form{
-   width: 100%;
-   display:flex;
-   align-items: center;
- justify-content: center;
-}
-.imput{
-    position:relative;
-    top:20px;
-    display:flex;
+.form {
+    width: 100%;
+    display: flex;
     align-items: center;
-  justify-content: center;
-}    
+    justify-content: center;
+}
+
+.imput {
+    position: relative;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .obciones {
-    
-    display:flex;
+
+    display: flex;
     align-items: center;
-  justify-content: space-around;
-  position:relative;
-    left:25%;
+    justify-content: space-around;
+    position: relative;
+    left: 25%;
 
 }
-header ul li a{
+
+header ul li a {
     text-decoration: none;
     color: #5cffff;
-    
+
 }
 
-header .form .input{
-    position:relative;
-    bottom:60px;
+header .form .input {
+    position: relative;
+    bottom: 60px;
     background-color: #FFF;
     border: 1px solid #000;
     outline: none;
     color: #666;
     padding: 4px;
     width: 40%;
-    
-    display:flex;
+
+    display: flex;
     align-items: center;
-  justify-content: space-around;
-      
+    justify-content: space-around;
+
 }
 
-header .form .submit{
+header .form .submit {
     text-align: left;
     background-color: #FFF;
     border: 1px solid #000;
@@ -160,11 +164,11 @@ header .form .submit{
 
 }
 
-div.burger-menu{
+div.burger-menu {
     text-align: center;
 }
 
-div.burger-menu i{
+div.burger-menu i {
     background-color: #000000;
     border-radius: 5px;
     color: #FFF;
@@ -181,66 +185,63 @@ div.burger-menu i{
 
 
 
-/****** produpto ******/    
+/****** produpto ******/
 
-.img-position{
+.img-position {
     position: relative;
     justify-content: flex-start;
-    
-   
-   
+
+
+
 }
-    
 
 
 
-.main-article{
-    display: block;
+
+.main-article {
+    display: flex;
     position: absolute;
-   left: 50%;
-   top:40px;
-   
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+
 }
 
 
 
-main{
+main {
     width: 90vw;
     margin: 0 auto 2em;
 }
 
-.forma{
-    display: flex; 
-    flex-wrap: wrap;
-    align-items: center ;
-    gap: 1em;   
-}
 
-.articulo{
-flex-direction: row;
+
+.articulo {
+    
     position: relative;
-    width: 40%;
     height: auto;
     text-align: center;
-    display:flex; 
-    height: 150px; 
-    -webkit-box-shadow: 0px -2px 37px 0px rgba(1,238,159,1);
--moz-box-shadow: 0px -2px 37px 0px rgba(1,238,159,1);
-box-shadow: 0px -2px 37px 0px rgba(1,238,159,1);
+    display: flex;
+
+    -webkit-box-shadow: 0px -2px 37px 0px rgba(1, 238, 159, 1);
+    -moz-box-shadow: 0px -2px 37px 0px rgba(1, 238, 159, 1);
+    box-shadow: 0px -2px 37px 0px rgba(1, 238, 159, 1);
 }
 
 .price {
     color: #000;
 }
 
-.discount{
+.discount {
     color: #00bd80;
 }
-.product-name{
+
+.product-name {
     color: black;
 }
 
-.description{
+.description {
     color: #000;
 }
 
@@ -258,27 +259,28 @@ box-shadow: 0px -2px 37px 0px rgba(1,238,159,1);
 
 
 
-footer{
+footer {
     background-color: #000;
     width: 100%;
     padding: 20px;
-    
+
 }
 
 
 
 /**** botones ****/
-.posicion-botones{
+.posicion-botones {
     display: flex;
     justify-content: end;
     position: relative;
-    top: 30px ;
+    top: 30px;
     align-items: flex-end;
- 
-    
+
+
 
 }
-.estilo-redes{
+
+.estilo-redes {
     font-size: 25px;
     width: 30px;
     height: 30px;
@@ -287,27 +289,27 @@ footer{
     border-radius: 50px;
     border: #fff;
     margin-right: 18px;
-   
+
     position: relative;
-   top: 5px;
-   left: 10px;
+    top: 5px;
+    left: 10px;
 
 
 }
 
 
 
-.boton{
-display: flex;
-justify-content: flex-end;
-position: absolute;
-right: 10px;
+.boton {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 10px;
 
 }
 
-.boton-estilo{
-width: 100px;
-height: 20px;
+.boton-estilo {
+    width: 100px;
+    height: 20px;
 
     color: #FFF;
     background-color: #00bd80;
@@ -318,41 +320,106 @@ height: 20px;
 
 /*************** ProducCart ***************/
 .container {
-width: 100%;
- max-height: 100%;
-position: relative;
-right: 0;
-background-color: #000000; 
-padding: 2em;
-box-shadow:rgba(0,0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
-top: 15px;
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    right: 0;
+    background-color: #000000;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px, rgba(0, 0, 0, 0.23) 0 3px 6px;
+    top: 15px;
 }
+
 .nav-card {
-font-size: 1.4rem;
-display: flex;
-justify-content: space-between;
-margin: 0 10px 0 10px;
-border-bottom: #e1e1e1;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px 0 10px;
+    border-bottom: #e1e1e1;
 }
-            
+
 .nav-card li {
-list-style: none;
-padding: 1rem;
-font-weight: bold;
+    list-style: none;
+    padding: 1rem;
+    font-weight: bold;
 }
+
 .boton-borrar {
-width: 50px;
-max-height: 100%;
+    width: 50px;
+    max-height: 100%;
 }
+
 .marcador-cantidad {
-height: 30px;
-font-size: 14px;
-text-align: center;
-width: 30px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    width: 30px;
 }
+
 .forma-cart {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 1em
+}
+
+
+
+
+
+
+
+
+
+/*******     new produpto   *******/
+.prupto{
+
+text-align: center;
+
+
+}
+.produptos {
+    background-color: white;
+    border-radius: 15%;
+    height: 230px;
+    width: 240px;
+    display: flex;
+   flex-direction: column;
+   border-color: #000; 
+   -webkit-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+   box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+    
+}
+
+
+.imagen-produp {
+    height: 130px;
+    width: 200px;
+    background-size:cover
+}
+
+.informacion-produpto {
+  align-items: center;
+}
+
+.precion-produp{
+ color: #000;
+
+}
+.descueto-produp{
+ color: #4CAF50;
+ font-size: 19px;
+}
+.nombre-produp{
+color: #000;
+font-size: 20px;
+}
+
+.forma {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 30px;
+    
 }

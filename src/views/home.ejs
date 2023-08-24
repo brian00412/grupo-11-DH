@@ -17,78 +17,65 @@
 
     </header>
     <div class="logo">
-        
+
     </div>
     <div class="form" action="#" method="GET">
-        
+
     </div>
     <section class="layout">
-    
+
     </section>
     <div class="burger-menu">
-    
+
     </div>
 
 
-</header>
+    </header>
 
     <div>
         <img src="/images/ofertas (2).png" class="img-1" alt="ofertas">
     </div>
 
     <main class="tamaño">
+
         <div class="forma">
-            <article class="articulo fondomain1 img-position">
-                
-                    <img src="/images/productos/monitor gigabyte.png" alt="monitor">
-                
-                <div class="main-article">
-                    <p class="discount">10% Off</p>
-                    <p class="price">$75.000</p>
-                    <h4 class="description">Monitor Gigabyte</h4>
+            <% products.forEach(product=> { %>
+                <div class="produptos">
+                    <div class="prupto">
+                        <img src="/images/productos/<%= product.imagen %>" class="imagen-produp" alt="">
+                        <div class="informacion-produpto">
+
+
+                            <p class="descueto-produp">
+                                <%= product.descuento %>% off
+                            </p>
+
+                            <p class="precion-produp">$<%= product.precio %>
+                            </p>
+
+                            <p class="nombre-produp">
+                                <%= product.nombre %>
+                            </p>
+
+
+                        </div>
+                    </div>
                 </div>
-            </article>
-            <article class="articulo fondomain1 img-position">
-                
-                    <img src="/images/productos/3341-gamepro-gk-70m-teclado-mecanico-rgb-60-outemu1-47297dcad44e3715cb16670806628282-640-0.png"
-                        alt="monitor">
-               
-                <div class="main-article">
-                    <p class="discount">20% Off</p>
-                    <p class="price">45.000</p>
-                    <h4 class="description">Teclado Mecanico</h4>
-                </div>
-            </article>
-            <article class="articulo fondomain1 img-position">
-                
-                    <img src="/images/productos/579976_radeon_rx_6000xt_left_angle_1260x709_0.jpg" alt="monitor">
-                
-                <div class="main-article">
-                    <p class="discount">10% Off</p>
-                    <p class="price">$380.000</p>
-                    <h4 class="description">rx 6700xt</h4>
-                </div>
-            </article>
-            <article class="articulo fondomain1 img-position">
-                
-                    <img src="/images/productos/g923-ps4-gallery-1.png" adlt="monitor">
-                
-                <div class="main-article">
-                    <p class="discount">10% Off</p>
-                    <p class="price">$140.000</p>
-                    <h4 class="description">volante Logitech</h4>
-                </div>
-            </article>
+
+
+
+                <% }); %>
         </div>
+
     </main>
 
-    <footer >
+    <footer>
 
         <%- include('partials/footer') %>
 
 
     </footer>
-    
+
 </body>
 
 </html>
