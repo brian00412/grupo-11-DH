@@ -11,37 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="topHeader">
-            <div class="menu">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <div class="logo">
-                <img class="imglogo" src="/images/LOGO2.png" alt="Logo">
-            </div>
-            <div class="usuario">
-                <p><i class="fa-solid fa-user"></i> Usuario</p>
-            </div>
-            <div class="carrito">
-                <p><i class="fa-solid fa-cart-shopping"></i></p>
-            </div>
-        </div>
 
-        <form class="form" action="">
-            <input type="search" placeholder="Buscar productos, marcas y más">
-            <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
-        </form>
-        <div class="menulist">
-            <ul class="opciones">
-                <li><a href="">Menu</a></li>
-                <li><a href="">Promocion</a></li>
-                <li><a href="">Ofertas Limitadas</a></li>
-                <li><a href="">Locales</a></li>
-                <li><a href="">Contacto</a></li>
-                <li><a href="">Horarios de atecion</a></li>
-            </ul>
-        </div>
-    </header>
+    <%- include("../partials/header") %>
 
     <main>
         <form class="crearP" action="" method="post">
@@ -74,26 +45,17 @@
                 <label for="price">Precio: </label>
                 <input type="number" name="price" id="price" required>
             </div>
-            <article class="boton">
+            <article class="botonEnviar">
                 <button class="enviar" type="submit">Enviar</button>
             </article> 
-            <article class="boton">
+            <article class="botonEnviar">
                 <button class="reset" type="reset">Restaurar</button>
             </article>
             <p><a class="editar" href="/crearProduct">Crear un producto</a></p>
         </form>
     </main>
 
-    <footer>
-        <div class="redes">
-            <p class="red" > <a href=""> <i id="whatsapp" class="fa-brands fa-whatsapp"> </i></a> </p>
-            <p class="red" > <a href=""></a><i id="facebook" class="fa-brands fa-facebook"></i></p>
-            <p class="red" > <a href=""></a><i id="instagram" class="fa-brands fa-instagram"></i></p>
-            <p class="red" > <a href=""></><i id="twitter" class="fa-brands fa-twitter"></i></p>
-            <p class="red" > <a href=""></a><i id="youtube" class="fa-brands fa-youtube"></i></p>
-        </div>
-        <p>Politicas de Privaciad</p>
-        <p>Asisente Técnico</p>
-    </footer>
+    <%- include("../partials/footer") %>
+
 </body>
 </html>

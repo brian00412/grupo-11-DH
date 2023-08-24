@@ -26,7 +26,7 @@
     width: 100%;
     border: 0;
 }
-.boton {
+.botonEnviar {
     display: flex;
     justify-content: center;
     padding: 10px;

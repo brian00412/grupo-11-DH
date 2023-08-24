@@ -10,86 +10,47 @@
     <link rel="stylesheet" href="/css/productDetail.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
-<header>
-    <div class="topHeader">
-        <div class="menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="logo">
-            <img class="imglogo" src="/images/LOGO2.png" alt="Logo">
-        </div>
-        <div class="usuario">
-            <p><i class="fa-solid fa-user"></i> Usuario</p>
-        </div>
-        <div class="carrito">
-            <p><i class="fa-solid fa-cart-shopping"></i></p>
-        </div>
-    </div>
 
-    <form class="form" action="">
-        <input type="search" placeholder="Buscar productos, marcas y más">
-        <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
-    </form>
-    <div class="menulist">
-        <ul class="opciones">
-            <li><a href="">Menu</a></li>
-            <li><a href="">Promocion</a></li>
-            <li><a href="">Ofertas Limitadas</a></li>
-            <li><a href="">Locales</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Horarios de atecion</a></li>
-        </ul>
-    </div>
-</header>
+<%- include("../partials/header") %>
 
-<main>
-    <form class="crearP" action="" method="post">
-        <h3 class="h3">Crear nuevo producto</h3>
-        <div>
-            <label for="name">Nombre: </label>
-            <input type="text" name="name" id="name" required>
-        </div>
-        <div>
-            <label for="description">Descripción: </label>
-            <input type="text" name="description" id="description" required>
-        </div>
-        <div>
-            <label for="image">imagen: </label>
-            <input type="file" name="image" id="image" required>
-        </div>
-        <div>
-            <label for="category">Categoria: </label>
-            <input type="text" name="category" id="category" required>
-        </div>
-        <div>
-            <label for="color">Color: </label>
-            <input type="text" name="color" id="color" required>
-        </div>
-        <div>
-            <label for="price">Precio: </label>
-            <input type="number" name="price" id="price" required>
-        </div>
-        <article class="boton">
-            <button class="enviar" type="submit">Enviar</button>
-        </article>
-        <p><a class="editar" href="/editarProducto">Editar un producto</a></p>
-    </form>
-</main>
+    <main>
+        <form class="crearP" action="" method="post">
+            <h3 class="h3">Crear nuevo producto</h3>
+            <div>
+                <label for="name">Nombre: </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div>
+                <label for="description">Descripción: </label>
+                <input type="text" name="description" id="description" required>
+            </div>
+            <div>
+                <label for="image">imagen: </label>
+                <input type="file" name="image" id="image" required>
+            </div>
+            <div>
+                <label for="category">Categoria: </label>
+                <input type="text" name="category" id="category" required>
+            </div>
+            <div>
+                <label for="color">Color: </label>
+                <input type="text" name="color" id="color" required>
+            </div>
+            <div>
+                <label for="price">Precio: </label>
+                <input type="number" name="price" id="price" required>
+            </div>
+            <article class="botonEnviar">
+                <button class="enviar" type="submit">Enviar</button>
+            </article>
+            <p><a class="editar" href="/editarProducto">Editar un producto</a></p>
+        </form>
+    </main>
 
-<footer>
-    <div class="redes">
-        <p class="red"> <a href=""> <i id="whatsapp" class="fa-brands fa-whatsapp"> </i></a> </p>
-        <p class="red"> <a href=""></a><i id="facebook" class="fa-brands fa-facebook"></i></p>
-        <p class="red"> <a href=""></a><i id="instagram" class="fa-brands fa-instagram"></i></p>
-        <p class="red"> <a href=""></><i id="twitter" class="fa-brands fa-twitter"></i></p>
-        <p class="red"> <a href=""></a><i id="youtube" class="fa-brands fa-youtube"></i></p>
-    </div>
-    <p>Politicas de Privaciad</p>
-    <p>Asisente Técnico</p>
-</footer>
+    <%- include("../partials/footer") %>
 
-<body>
+    <body>
 
-</body>
+    </body>
 
 </html>
