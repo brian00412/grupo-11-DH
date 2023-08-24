@@ -12,36 +12,7 @@
 <body>
     <header>
 
-        <div class="logo">
-            <img class="img1" src="/images/LOGO2.png" alt="technopolis">
-        </div>
-        <div class="form" action="#" method="GET">
-            <input placeholder="Search" type="search" class="input">
-            
-            <div class="login-register-buttons">
-                <button><a href="/login">Iniciar sesión</a></button>
-                <button><a href="/register">Registrarse</a></button>
-            </div>
-
-        </div>
-        <section class="layout">
-            <div class="grow1">
-                <ul class="obciones">
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Promocion</a></li>
-                    <li><a href="#">Ofertas Limitadas</a></li>
-                    <li><a href="#">Locales</a></li>
-                    <li><a href="#">contacto</a></li>
-                    <li><a href="#">Horarios de atecion</a></li>
-                </ul>
-            </div>
-            <div class="grow1">
-            </div>
-        </section>
-
-        <div class="burger-menu">
-            <i class="fa fa-bars burger"></i>
-        </div>
+        <%- include('partials/header') %>
     </header>
     <div class="logo">
         
@@ -154,33 +125,10 @@
          </div>    
           </main>
 
-          <footer class="pie1">
-
-            <div class="boton">
-    
-                <button class="boton-estilo">App Store</button>
-                <button class="boton-estilo">Google Play</button>
-            </div>
-    
-            <div class="posicion-botones">
-                <button type="button" class="estilo-redes"><i class="fa-brands fa-whatsapp"
-                        style="color: #000000;"></i></button>
-                <p>whatsapp</p>
-                <button type="button" class="estilo-redes"><i class="fa-brands fa-facebook-f"
-                        style="color: #000000;"></i></button>
-                <p>facebook</p>
-                <button type="button" class="estilo-redes"><i class="fa-brands fa-instagram"
-                        style="color: #000000;"></i></button>
-                <p>instagram</p>
-                <button type="button" class="estilo-redes"><i class="fa-brands fa-twitter"
-                        style="color: #000000;"></i></button>
-                <p>twitter</p>
-                <button type="button" class="estilo-redes"><i class="fa-brands fa-youtube"
-                        style="color: #000000;"></i></button>
-                <p>youtube</p>
-            </div>
-            <h4>politica de privacidad</h4>
-        </footer>
+          <footer>
+            <%- include('partials/footer') %>
+          </footer>
+        
 
 
 
