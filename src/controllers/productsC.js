@@ -1,12 +1,12 @@
 const fs = require("fs");
-const path = require("path")
+const path = require("path");
 
-const productspath = path.join(__dirname, "../data/productos.json")
-const products = JSON.parse(fs.readFileSync(productspath))
-console.log(products)
+const productspath = path.join(__dirname, "../data/productos.json");
+const products = JSON.parse(fs.readFileSync(productspath));
+
 const productController = {
     detalles: (req, res) => {
-        res.render("products/productDetail");
+        res.render("products/productDetail", products);
     },
     crear: (req, res) => {
         res.render("products/crearProduct")
@@ -15,14 +15,21 @@ const productController = {
         res.render("products/editarProducto")
     },
     create: (req, res) => {
+    
         let nuevoProducto = {
+            id: Date.now(),
             nombre: req.body.name,
             descripcion: req.body.description,
-            imagen: req.body.image,
             categoria: req.body.category,
-            color: req.body.color,
             precio: req.body.price,
-        }
+            // descuento: req.body.descuento,
+            color: req.body.color,
+            // img: req.file.filename,
+        };
+
+        products.push(nuevoProducto);
+        fs.writeFileSync(productspath, JSON.stringify(products));
+        res.redirect("/")
     }
 }
 
