@@ -4,6 +4,7 @@ const routerProduct = require('./routes/productsR');
 const app = express();
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.set("view engine", "ejs");
 app.set("views", "src/views");
@@ -19,12 +20,7 @@ app.listen(8080, ()=>{
 });
 
 app.use('/', router);
-app.use((req, res, next)=>{
-    console.log(req.method);
-    console.log(req.body);
-    next()
 
-})
 app.use("/", routerProduct)
 
 app.get('/contraolvidada', (req, res) => {

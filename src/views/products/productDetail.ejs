@@ -46,7 +46,7 @@
 
     <main>
         <div class="imgP">
-            <img src="/images/rogZephyrusDuo/perspectiva.png" alt="Vista perspectiva del Rog Zephyrus Duo">
+            <img src="/images/productos/<%= product.imagen %>" alt="Vista perspectiva del Rog Zephyrus Duo">
         </div>
         <section class="carrusel">
             <img class="img" src="/images/rogZephyrusDuo/perspectiva.png" alt="Vista perspectiva del Rog Zephyrus Duo">
@@ -59,9 +59,9 @@
         <div>
             <!-- <i class="fa-regular fa-star"></i> -->
             <div class="producto">
-                <h5 class="titulo">Notebook Rog Zephyrus Duo 16 32gb Win 11</h5>
-                <p class="precio">$2.953.499</p>
-                <p class="descuento">10%</p>
+                <h5 class="titulo"><%= product.nombre %></h5>
+                <p class="precio">$<%= product.precio %></p>
+                <p class="descuento"><%= product.descuento %>%</p>
             </div>
             <div class="caracteristicas">
                 <p class="top">Lo que tenés que saber de este producto</p>

@@ -14,7 +14,7 @@
 <%- include("../partials/header") %>
 
     <main>
-        <form class="crearP" action="/crearProduct" method="post">
+        <form class="crearP" action="/crearProduct" method="post" enctype="multipart/form-data">
             <h3 class="h3">Crear nuevo producto</h3>
             <div>
                 <label for="name">Nombre: </label>
@@ -25,20 +25,24 @@
                 <input type="text" name="description" id="description" required>
             </div>
             <div>
-                <label for="image">imagen: </label>
-                <input type="file" name="image" id="image" >
-            </div>
-            <div>
                 <label for="category">Categoria: </label>
                 <input type="text" name="category" id="category" required>
+            </div>
+            <div>
+                <label for="price">Precio: </label>
+                <input type="number" name="price" id="price" required>
+            </div>
+            <div>
+                <label for="descuento">Descuento: </label>
+                <input type="number" name="descuento" id="descuento" required>
             </div>
             <div>
                 <label for="color">Color: </label>
                 <input type="text" name="color" id="color" required>
             </div>
             <div>
-                <label for="price">Precio: </label>
-                <input type="number" name="price" id="price" required>
+                <label for="image">imagen: </label>
+                <input type="file" name="image" id="image">
             </div>
             <article class="botonEnviar">
                 <button class="enviar" type="submit">Enviar</button>
@@ -49,8 +53,8 @@
 
     <%- include("../partials/footer") %>
 
-    <body>
+        <body>
 
-    </body>
+        </body>
 
 </html>

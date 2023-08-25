@@ -6,7 +6,9 @@ const products = JSON.parse(fs.readFileSync(productspath));
 
 const productController = {
     detalles: (req, res) => {
-        res.render("products/productDetail", products);
+        let id = req.params.id;
+        let product = products.find(p => p.id == id)
+        res.render("products/productDetail", {product});
     },
     crear: (req, res) => {
         res.render("products/crearProduct")
@@ -15,16 +17,16 @@ const productController = {
         res.render("products/editarProducto")
     },
     create: (req, res) => {
-    
+        console.log(req.file);
         let nuevoProducto = {
             id: Date.now(),
             nombre: req.body.name,
             descripcion: req.body.description,
             categoria: req.body.category,
             precio: req.body.price,
-            // descuento: req.body.descuento,
+            descuento: req.body.descuento,
             color: req.body.color,
-            // img: req.file.filename,
+            imagen: req.file.filename,
         };
 
         products.push(nuevoProducto);
