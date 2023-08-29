@@ -2,13 +2,16 @@ body {
     font-family: Arial, sans-serif;
     background-image: linear-gradient(to right, #1ee9ff, #00bd80);
     color: white;
+    padding: 0;
+    margin: 0;
 }
 .form-container {
     max-width: 400px;
-    margin: 0 auto;
+    margin: 40px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 .form-container h2 {
     text-align: center;

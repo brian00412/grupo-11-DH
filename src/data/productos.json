@@ -48,5 +48,15 @@
         "descuento": 10,
         "color": "Negro",
         "imagen": "rogZephyrusDuo.png"
+    },
+    {
+        "id": 6,
+        "nombre": "logitech G502",
+        "descripcion": "",
+        "categoria": "Oferta",
+        "precio": 60000,
+        "descuento": 20,
+        "color": "Negro",
+        "imagen": "logitechg502.png"
     }
 ]

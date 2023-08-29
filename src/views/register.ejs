@@ -9,16 +9,17 @@
     <header>
         <%- include('partials/header') %>
     </header>
+    <main>
     <div class="form-container">
         <h2>Registrarse</h2>
         <form action="/register" method="post">
-           
+           <label for="email">Correo electrónico:</label>
             <div class="form-group">
-                <label for="email">Correo electrónico:</label>
+                
                 <input type="email" id="email" name="email" required>
             </div>
+            <label for="password">Contraseña:</label>
             <div class="form-group">
-                <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
@@ -26,5 +27,7 @@
             </div>
         </form>
     </div>
+    </main>
+    <footer><%- include('partials/footer') %></footer>
 </body>
 </html>

@@ -1,22 +1,30 @@
 body{
-    background-image: linear-gradient(to right, #1ee9ff, #00bd80);
+   background-image: linear-gradient(to right, #1ee9ff, #00bd80);
         color: white;
+    }
+    main{
+        
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        margin: 0;
+        height: 50vh;
+        margin: 0; 
     }
     .form-container {
         padding: 20px;
         background: rgba(255, 255, 255, 0.8);
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        text-align: center;
     }
     .form-container h2 {
         color: cyan;
     }
     .form-container label {
         color: #0a445c; 
+    }
+    label{
+        font-size: 20px;
     }
     
