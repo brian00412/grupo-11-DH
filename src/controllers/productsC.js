@@ -21,7 +21,7 @@ const productController = {
         let nuevoProducto = {
             id: Date.now(),
             nombre: req.body.name,
-            descripcion: req.body.description,
+            descripcion: req.body.description.split(","),
             categoria: req.body.category,
             precio: req.body.price,
             descuento: req.body.descuento,
