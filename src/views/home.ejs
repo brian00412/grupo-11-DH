@@ -51,7 +51,7 @@
                                     <%= product.descuento %>% off
                                 </p>
 
-                                <p class="precion-produp">$<%= product.precio %>
+                                <p class="precion-produp">$<%= new Intl.NumberFormat().format(product.precio) %>
                                 </p>
 
                                 <p class="nombre-produp">
