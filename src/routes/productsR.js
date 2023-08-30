@@ -20,7 +20,8 @@ routerProduct.get("/productDetail/:id", productController.detalles);
 routerProduct.get("/crearProduct", productController.crear);
 routerProduct.post("/crearProduct",upload.single("image"), productController.create);
 
-routerProduct.get("/editarProducto", productController.editar);
+routerProduct.get("/editarProducto/:id?", productController.editarForm);
+routerProduct.post("/editarProducto/:id?", upload.single("image"), productController.editar);
 
 
 module.exports = routerProduct;

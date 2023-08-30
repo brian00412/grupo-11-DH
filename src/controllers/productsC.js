@@ -8,14 +8,13 @@ const productController = {
     detalles: (req, res) => {
         let id = req.params.id;
         let product = products.find(p => p.id == id)
-        res.render("products/productDetail", {product});
+        res.render("products/productDetail", { product });
     },
+
     crear: (req, res) => {
         res.render("products/crearProduct")
     },
-    editar: (req, res) => {
-        res.render("products/editarProducto")
-    },
+
     create: (req, res) => {
         console.log(req.file);
         let nuevoProducto = {
@@ -32,7 +31,40 @@ const productController = {
         products.push(nuevoProducto);
         fs.writeFileSync(productspath, JSON.stringify(products));
         res.redirect("/")
+    },
+
+    editarForm: (req, res) => {
+        let id = req.params.id;
+        let product = products.find(p => p.id == id)
+        res.render("products/editarProducto", { product })
+    },
+
+    editar: (req, res) => {
+        let id = req.params.id -1;
+        let product = products.find(p => p.id-1== id);
+        let imagen;
+        if(req.file){
+            imagen = req.file.filename
+        } else {
+            imagen = product.imagen
+        }
+        let productoEditado = {
+            id: req.body.id,
+            nombre: req.body.name,
+            descripcion: req.body.description.split(","),
+            categoria: req.body.category,
+            precio: req.body.price,
+            descuento: req.body.descuento,
+            color: req.body.color,
+            imagen: imagen,
+        }
+        // product = productoEditado;
+
+        products.splice(id, 1, productoEditado);
+        fs.writeFileSync(productspath, JSON.stringify(products));
+        res.redirect("/")
     }
+
 }
 
 module.exports = productController;

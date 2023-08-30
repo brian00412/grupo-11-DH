@@ -22,12 +22,12 @@
                         <h3 class="titulo">
                             <%= product.nombre %>
                         </h3>
-                        <p class="precio">$<%= product.precio %>
+                        <p class="precio">$<% let number = new Intl.NumberFormat().format(product.precio) %> <%= number  %>
                         </p>
                         <p class="descuento">
                             <%= product.descuento %>% OFF
                         </p>
-                        <%let total=product.precio - (product.precio /100 * product.descuento) %>
+                        <%let total= new Intl.NumberFormat().format(product.precio - (product.precio /100 * product.descuento)) %>
                             <p class="total"> $<%= total %>
                             </p>
                         </div>
