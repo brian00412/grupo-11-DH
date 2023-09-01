@@ -1,30 +1,253 @@
-body{
-   background-image: linear-gradient(to right, #1ee9ff, #00bd80);
-        color: white;
-    }
-    main{
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50vh;
-        margin: 0; 
-    }
-    .form-container {
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        align-items: center;
-        text-align: center;
-    }
-    .form-container h2 {
-        color: cyan;
-    }
-    .form-container label {
-        color: #0a445c; 
-    }
-    label{
-        font-size: 20px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+.fondobody {
+    background-color: yellow;
+
+}
+
+header {        
+    background-color: yellow;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #EAC926;
+}
+
+.fondomain {
+    background-color: #ffffff;
+    width: 100%;
+    height: 500px;
+}
+.contenedor-img{
+    
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    position: relative
+}
+
+.fa-search {
+    position: relative;
+    align-items: center;
+}
+
+.burger-menu{
+    display: none;
+    align-items: center;
+
+}
+
+.forma-main {
+
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    max-width: 90%;
+    padding: 2em;
+    border-radius: 7px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+
+
+.tamañofooter{
+    margin-bottom: 0;
+    height:auto;
+    width: 100%;
+   
+}
+
+
+.info-footer{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 12px;
+}
+
+.logofooter {
+    text-align: center;
+}
+
+
+.icono{
+    font-size: 50px
+}
+
+
+.logo{
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.barra{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
+}
+.barra i {
+    font-size: 32px;
+}
+
+.buscar {
+    height: 40px;       
+    width: 500px;
+}
+
+
+
+.tamañocr{
+    width: 5px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin:  40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    background-color: darkslategray;
+    
+    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+.form-container h2 {
+    text-align: center;
+}
+.form-group {
+    display: block;
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.form-group input[type="reset"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #af4c4c;
+    color: white;
+    border-radius: 5px;
+    cursor:pointer;
+}
+.form-check-label {
+  display:block;
+  margin-top:10px;
+  margin-bottom:10px; 
+}
+#input-item{
+    display: none;
+}
+#link{
+    color: black;
+}
+
+
+
+
+@media (max-width: 768px){
+
+
+
+    .contenedor-img{
+        gap: 50px;
     }
     
+
+    .img-logo {
+       
+        width: 40%;
+        height: 80px;
+    }
+    
+    
+    .buscar {
+        height: 40px;
+        width: 300px;
+    }
+
+
+}
+
+@media (max-width: 460px){
+
+    .contenedor-img{
+    
+        flex-direction: column;
+        gap: 10px;
+    }
+    .img-logo{
+       
+        width: 70%;
+        height: 100px;
+    }
+    
+
+    .buscar {
+        height: 20px;
+        width: 80%;
+    }
+    .barra i {
+        font-size: 16px;
+    }
+    .menu{
+        display: none;
+      
+
+    }
+    .caja{
+        flex-direction: column;
+    }
+
+    .info-footer {
+        text-align: center;
+        font-size: 10px;
+    }
+    .form-container {
+  
+            top: 0px;
+        }
+
+    .form-container {
+
+        border:0px solid #ffffff;
+    
+    }
+
+
+
+}   
