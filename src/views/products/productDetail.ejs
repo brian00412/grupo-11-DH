@@ -14,6 +14,8 @@
     <%- include("../partials/header") %>
 
         <main>
+<form action="/add-to-cart/<%= product.id %>" method="POST"></form>
+<form action="/add-to-cart/<%= product.id %>" method="POST"></form>
             <div class="contenedor">
                     <div class="imagen">
                         <img src="/images/productos/<%= product.imagen %>" alt="<%= product.nombre %>">
@@ -44,8 +46,11 @@
                 <div class="compra">
                     <p class="comprar">Comprar ahora</p>
                     <p class="agregar"><span class="textA"> Agregar al carrito </span> <i
-                            class="fa-solid fa-cart-plus"></i></p>
+                        class="fa-solid fa-cart-plus"></i></p>
                 </div>
+
+</form>
+   
                 <div class="admin">
 
                     <a href="/crearProduct">
