@@ -58,7 +58,6 @@ const productController = {
             color: req.body.color,
             imagen: imagen,
         }
-        // product = productoEditado;
 
         products.splice(id, 1, productoEditado);
         fs.writeFileSync(productspath, JSON.stringify(products));

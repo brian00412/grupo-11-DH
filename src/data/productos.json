@@ -16,7 +16,8 @@
         "precio": 75000,
         "descuento": 10,
         "color": "Negro",
-        "imagen": "monitor gigabyte.png"
+        "imagen": "monitor gigabyte.png",
+        "delete": "false"
     },
     {
         "id": 2,
@@ -35,7 +36,8 @@
         "precio": 45000,
         "descuento": 20,
         "color": "Negro",
-        "imagen": "tecladoMecanico.png"
+        "imagen": "tecladoMecanico.png",
+        "delete": "false"
     },
     {
         "id": 3,
@@ -54,7 +56,8 @@
         "precio": 380000,
         "descuento": 10,
         "color": "Negro",
-        "imagen": "rx6700xt.jpg"
+        "imagen": "rx6700xt.jpg",
+        "delete": "false"
     },
     {
         "id": 4,
@@ -73,26 +76,30 @@
         "precio": 140000,
         "descuento": 10,
         "color": "Negro",
-        "imagen": "volanteLogitech.png"
+        "imagen": "volanteLogitech.png",
+        "delete": "false"
     },
     {
-        "id": 5,
-        "nombre": "Notebook Rog Zephyrus Duo",
+        "id": "  5",
+        "nombre": "  Notebook Rog Zephyrus Duo",
         "descripcion": [
-            "Marca: ASUS",
+            "  Marca: ASUS",
             "Nombre del modelo: ROG Zephyrus Dúo 16 (2022)",
-            "Tamaño de pantalla:40,64 centímetros",
+            "Tamaño de pantalla:40",
+            "64 centímetros",
             "Coprocesador de gráficos: NVIDIA GeForce RTX 3060",
-            "Velocidad de la CPU: 4,7 GHz",
+            "Velocidad de la CPU: 4",
+            "7 GHz",
             "Tamaño del disco duro: 2 TB",
             "Sistema operativo: Inicio de Windows 11",
             "Procesador: AMD Ryzen 7 6800H"
         ],
-        "categoria": "Oferta",
-        "precio": 2553499,
-        "descuento": 10,
-        "color": "Negro",
-        "imagen": "rogZephyrusDuo.png"
+        "categoria": "  Oferta",
+        "precio": "  2553499",
+        "descuento": "  10",
+        "color": "  Negro",
+        "imagen": "rogZephyrusDuo.png",
+        "delete": "false"
     },
     {
         "id": 6,
@@ -110,6 +117,7 @@
         "precio": 60000,
         "descuento": 20,
         "color": "Negro",
-        "imagen": "logitechg502.png"
+        "imagen": "logitechg502.png",
+        "delete": "false"
     }
 ]
