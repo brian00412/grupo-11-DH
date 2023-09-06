@@ -17,7 +17,7 @@
         "descuento": 10,
         "color": "Negro",
         "imagen": "monitor gigabyte.png",
-        "delete": "false"
+        "delete": false
     },
     {
         "id": 2,
@@ -37,7 +37,7 @@
         "descuento": 20,
         "color": "Negro",
         "imagen": "tecladoMecanico.png",
-        "delete": "false"
+        "delete": false
     },
     {
         "id": 3,
@@ -57,7 +57,7 @@
         "descuento": 10,
         "color": "Negro",
         "imagen": "rx6700xt.jpg",
-        "delete": "false"
+        "delete": false
     },
     {
         "id": 4,
@@ -77,10 +77,10 @@
         "descuento": 10,
         "color": "Negro",
         "imagen": "volanteLogitech.png",
-        "delete": "false"
+        "delete": false
     },
     {
-        "id": "  5",
+        "id": "5",
         "nombre": "  Notebook Rog Zephyrus Duo",
         "descripcion": [
             "  Marca: ASUS",
@@ -99,7 +99,7 @@
         "descuento": "  10",
         "color": "  Negro",
         "imagen": "rogZephyrusDuo.png",
-        "delete": "false"
+        "delete": false
     },
     {
         "id": 6,
@@ -118,6 +118,6 @@
         "descuento": 20,
         "color": "Negro",
         "imagen": "logitechg502.png",
-        "delete": "false"
+        "delete": false
     }
 ]

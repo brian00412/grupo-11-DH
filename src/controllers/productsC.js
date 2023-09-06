@@ -26,6 +26,7 @@ const productController = {
             descuento: req.body.descuento,
             color: req.body.color,
             imagen: req.file.filename,
+            delete: false,
         };
 
         products.push(nuevoProducto);
@@ -57,9 +58,18 @@ const productController = {
             descuento: req.body.descuento,
             color: req.body.color,
             imagen: imagen,
+            delete: false,
         }
 
         products.splice(id, 1, productoEditado);
+        fs.writeFileSync(productspath, JSON.stringify(products));
+        res.redirect("/")
+    },
+
+    eliminar: (req,res)=>{
+        let id = req.params.id;
+        let product = products.find(p => p.id == id);
+        product.delete = true;
         fs.writeFileSync(productspath, JSON.stringify(products));
         res.redirect("/")
     }

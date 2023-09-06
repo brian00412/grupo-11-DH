@@ -23,5 +23,7 @@ routerProduct.post("/crearProduct",upload.single("image"), productController.cre
 routerProduct.get("/editarProducto/:id?", productController.editarForm);
 routerProduct.post("/editarProducto/:id?", upload.single("image"), productController.editar);
 
+routerProduct.post("/eliminarProducto/:id", productController.eliminar)
+
 
 module.exports = routerProduct;

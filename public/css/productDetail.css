@@ -104,7 +104,8 @@
 
 .comprar:hover,
 .agregar:hover,
-.admin a:hover {
+.admin a:hover,
+.admin button:hover {
     background-color: blue;
     color: white;
 }
@@ -115,6 +116,7 @@
     justify-content: space-between;
 }
 
+.admin button,
 .admin a {
     text-decoration: none;
     color: black;
@@ -155,7 +157,8 @@
 
     .comprar,
     .agregar,
-    .admin a {
+    .admin a,
+    .admin button {
         font-size: 20px;
     }
 }
@@ -199,7 +202,8 @@
 
     .comprar,
     .agregar,
-    .admin a {
+    .admin a,
+    .admin button {
         font-size: 30px;
         margin: 40px 15px 20px 15px;
     }

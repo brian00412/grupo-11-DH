@@ -14,43 +14,45 @@
     <%- include("../partials/header") %>
 
         <main>
-<form action="/add-to-cart/<%= product.id %>" method="POST"></form>
-<form action="/add-to-cart/<%= product.id %>" method="POST"></form>
+            <form action="/add-to-cart/<%= product.id %>" method="POST"></form>
+            <form action="/add-to-cart/<%= product.id %>" method="POST"></form>
             <div class="contenedor">
-                    <div class="imagen">
-                        <img src="/images/productos/<%= product.imagen %>" alt="<%= product.nombre %>">
-                    </div>
-                    <div class="producto">
-                        <h3 class="titulo">
-                            <%= product.nombre %>
-                        </h3>
-                        <p class="precio">$<% let number = new Intl.NumberFormat().format(product.precio) %> <%= number  %>
+                <div class="imagen">
+                    <img src="/images/productos/<%= product.imagen %>" alt="<%= product.nombre %>">
+                </div>
+                <div class="producto">
+                    <h3 class="titulo">
+                        <%= product.nombre %>
+                    </h3>
+                    <p class="precio">$<% let number=new Intl.NumberFormat().format(product.precio) %>
+                            <%= number %>
+                    </p>
+                    <p class="descuento">
+                        <%= product.descuento %>% OFF
+                    </p>
+                    <%let total=new Intl.NumberFormat().format(product.precio - (product.precio /100 *
+                        product.descuento)) %>
+                        <p class="total"> $<%= total %>
                         </p>
-                        <p class="descuento">
-                            <%= product.descuento %>% OFF
-                        </p>
-                        <%let total= new Intl.NumberFormat().format(product.precio - (product.precio /100 * product.descuento)) %>
-                            <p class="total"> $<%= total %>
-                            </p>
-                        </div>
-                        <div class="descripcion">
-                        <h4 class="caracteristicas">Caracteristicas</h4>
-                        <ul>
-                            <% for(let i=0; i<product.descripcion.length; i++){%>
-                                <li>
-                                    <%=product.descripcion[i] %>
-                                </li>
-                                <%}%>
-                        </ul>
-                    </div>
+                </div>
+                <div class="descripcion">
+                    <h4 class="caracteristicas">Caracteristicas</h4>
+                    <ul>
+                        <% for(let i=0; i<product.descripcion.length; i++){%>
+                            <li>
+                                <%=product.descripcion[i] %>
+                            </li>
+                            <%}%>
+                    </ul>
+                </div>
                 <div class="compra">
                     <p class="comprar">Comprar ahora</p>
                     <p class="agregar"><span class="textA"> Agregar al carrito </span> <i
-                        class="fa-solid fa-cart-plus"></i></p>
+                            class="fa-solid fa-cart-plus"></i></p>
                 </div>
 
-</form>
-   
+                </form>
+
                 <div class="admin">
 
                     <a href="/crearProduct">
@@ -59,6 +61,10 @@
                     <a href="/editarProducto/<%= product.id %>">
                         <p>Editar</p>
                     </a>
+                    <form action="/eliminarProducto/<%= product.id %>" method="post">
+                        <button>Eliminar</button>
+                    </form>
+                    
                 </div>
             </div>
         </main>
