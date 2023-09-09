@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
 
@@ -5,6 +6,10 @@ const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
 
 const productController = {
+    listado: (req , res) => {
+            res.render("products/products",{products})
+          },
+
     detalles: (req, res) => {
         let id = req.params.id;
         let product = products.find(p => p.id == id)
