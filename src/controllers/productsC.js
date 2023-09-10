@@ -54,7 +54,7 @@ const productController = {
             imagen = product.imagen
         }
         let productoEditado = {
-            id: req.body.id,
+            id: req.params.id,
             nombre: req.body.name,
             descripcion: req.body.description.split(","),
             categoria: req.body.category,

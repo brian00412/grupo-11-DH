@@ -47,8 +47,11 @@
                 </div>
                 <div class="compra">
                     <p class="comprar">Comprar ahora</p>
-                    <p class="agregar"><span class="textA"> Agregar al carrito </span> <i
-                            class="fa-solid fa-cart-plus"></i></p>
+                    <form action="/productCart/<%= product.id %>" method="post">
+                        <button class="agregar"><span class="textA"> Agregar al carrito </span> <i
+                            class="fa-solid fa-cart-plus"></i></>
+                    </form>
+                    
                 </div>
 
                 </form>

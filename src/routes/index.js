@@ -1,6 +1,7 @@
 const express = require('express');
 const { homecontroller, registercontroller, logincontroller, productCartcontroller } = require('../controllers');
 const multer = require('multer');
+const carrito = require('../controllers/carrito');
 
 
 
@@ -22,8 +23,8 @@ const storage = multer.diskStorage({
 router.get('/', homecontroller);
 router.get('/login', logincontroller);
 router.get('/register', registercontroller);
-router.get('/productCart', productCartcontroller);
-
+router.get('/productCart', carrito, );
+router.post("/productCart/:id", carrito);
 
 
 module.exports = router ;
