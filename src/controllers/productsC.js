@@ -67,7 +67,7 @@ const productController = {
 
         products.splice(id, 1, productoEditado);
         fs.writeFileSync(productspath, JSON.stringify(products));
-        res.redirect("/")
+        res.render("home",{products})
     },
 
     eliminar: (req,res)=>{
@@ -75,7 +75,7 @@ const productController = {
         let product = products.find(p => p.id == id);
         product.delete = true;
         fs.writeFileSync(productspath, JSON.stringify(products));
-        res.redirect("/")
+        res.render("home",{products})
     }
 
 }
