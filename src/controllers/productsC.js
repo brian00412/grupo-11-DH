@@ -35,7 +35,7 @@ const productController = {
 
         products.push(nuevoProducto);
         fs.writeFileSync(productspath, JSON.stringify(products));
-        res.redirect("/")
+        res.render("home",{products})
     },
 
     editarForm: (req, res) => {
