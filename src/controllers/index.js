@@ -1,14 +1,17 @@
 const path = require('path')
 const fs = require('fs')
-const productspath = path.join(__dirname, "../data/productos.json")
-const products = JSON.parse(fs.readFileSync(productspath))
+const userspath = path.join(__dirname, "../data/users.json")
+const users = JSON.parse(fs.readFileSync(userspath))
+
+const productspath = path.join(__dirname, "../data/productos.json");
+const products = JSON.parse(fs.readFileSync(productspath));
 
 
 const getProducts = (req, res) => {
     res.status(200).json(usuario)
 }
 
-const personasController = {
+const usersController= {
    
     crear: (req, res) => {
         res.render("register")
@@ -16,19 +19,19 @@ const personasController = {
 
     create: (req, res) => {
         console.log(req.file);
-        let nuevopersonas = {
+        let newUser = {
             id: Date.now(),
-            Nombreyapellido: req.body.nombreYapellido,
-            Nombredeusuari: req.body.nombre_usuario,
-            Cumpleaño: req.body.Cumpleaño,
-            foto_usuario: req.body.foto_usuario,
+            firstName: req.body.nombre,
+            lastName: req.body.apellido,
+            email: req.body.email,
             password: req.body.password,
-            
+            category: req.body.categoria,
+            image: req.file.filename
         };
 
-        usuario.push(nuevopersona);
-        fs.writeFileSync(productspath, JSON.stringify(usuario));
-        res.redirect("/")
+        users.push(newUser);
+        fs.writeFileSync(userspath, JSON.stringify(users));
+        res.render("home",{products})
 
     },
     
@@ -36,10 +39,6 @@ const personasController = {
 
 const homecontroller= (req, res) => {
    res.render('home',{products})
-}
-
-const registercontroller= (req, res) => {
-    res.render('register')
 }
 
 const logincontroller= (req, res) => {
@@ -52,7 +51,7 @@ const productCartcontroller= (req, res) => {
 
 module.exports = {
     homecontroller ,
-    registercontroller ,
     logincontroller ,
     productCartcontroller,
+    usersController
 }
