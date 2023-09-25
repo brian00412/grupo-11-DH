@@ -1,5 +1,6 @@
 const express = require('express');
-const { homecontroller, registercontroller, logincontroller, productCartcontroller, usersController } = require('../controllers');
+const { homecontroller, perfilesController } = require('../controllers');
+const multer = require('multer');
 const carrito = require('../controllers/carrito');
 
 
@@ -11,6 +12,7 @@ router.get('/', homecontroller);
 
 router.get('/productCart', carrito, );
 router.post("/productCart/:id", carrito);
+router.get('/myPerfil',perfilesController);
 
 
 module.exports = router ;

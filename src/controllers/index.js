@@ -49,10 +49,13 @@ const logincontroller= (req, res) => {
 const productCartcontroller= (req, res) => {
     res.render('productCart')
 }
+const perfilesController= (req, res) => {
+    res.render('users/perfiles')
+}
 
 module.exports = {
     homecontroller ,
     logincontroller ,
     productCartcontroller,
-    usersController
+    perfilesController
 }
