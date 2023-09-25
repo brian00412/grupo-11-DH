@@ -1,92 +1,92 @@
 [
-  {
-    "id": 1,
-    "firstName": "Loïc",
-    "lastName": "Cleverley",
-    "email": "lcleverley0@cbc.ca",
-    "password": "vX8=/4`in,n",
-    "category": "comprador",
-    "image": "https://robohash.org/quiadictarepudiandae.jpg?size=50x50&set=set1"
-  },
-  {
-    "id": 2,
-    "firstName": "Alizée",
-    "lastName": "Franiak",
-    "email": "kfraniak1@ftc.gov",
-    "password": "rD0}l<kFR'/Gw",
-    "category": "comprador",
-    "image": "https://robohash.org/quialaudantiumharum.png?size=50x50&set=set1"
-  },
-  {
-    "id": 3,
-    "firstName": "Eugénie",
-    "lastName": "Ebbutt",
-    "email": "nebbutt2@berkeley.edu",
-    "password": "kU7/dDPH_|ey#hG",
-    "category": "comprador",
-    "image": "https://robohash.org/providentutrerum.png?size=50x50&set=set1"
-  },
-  {
-    "id": 4,
-    "firstName": "Adélaïde",
-    "lastName": "Clewarth",
-    "email": "jclewarth3@ft.com",
-    "password": "sY4?'DWJ\"KQkkw2u",
-    "category": "comprador",
-    "image": "https://robohash.org/odioperferendissit.jpg?size=50x50&set=set1"
-  },
-  {
-    "id": 5,
-    "firstName": "Gisèle",
-    "lastName": "Tunsley",
-    "email": "ntunsley4@biblegateway.com",
-    "password": "xY5`g\"@k_WF?",
-    "category": "comprador",
-    "image": "https://robohash.org/perferendiscumet.bmp?size=50x50&set=set1"
-  },
-  {
-    "id": 6,
-    "firstName": "Marie-françoise",
-    "lastName": "Kohrding",
-    "email": "jkohrding5@microsoft.com",
-    "password": "bD8}6,Gz2",
-    "category": "vendedor",
-    "image": "https://robohash.org/voluptatemautemquia.jpg?size=50x50&set=set1"
-  },
-  {
-    "id": 7,
-    "firstName": "Angèle",
-    "lastName": "Frushard",
-    "email": "sfrushard6@xinhuanet.com",
-    "password": "pG2@KM`z==",
-    "category": "comprador",
-    "image": "https://robohash.org/absitfuga.png?size=50x50&set=set1"
-  },
-  {
-    "id": 8,
-    "firstName": "Mélina",
-    "lastName": "Brambell",
-    "email": "pbrambell7@bing.com",
-    "password": "iR2&YL|c@N~q5i",
-    "category": "vendedor",
-    "image": "https://robohash.org/suscipitvoluptatumrem.jpg?size=50x50&set=set1"
-  },
-  {
-    "id": 9,
-    "firstName": "Daphnée",
-    "lastName": "Hebblewaite",
-    "email": "jhebblewaite8@nih.gov",
-    "password": "iP5=8r)QRE",
-    "category": "vendedor",
-    "image": "https://robohash.org/utmollitiaut.bmp?size=50x50&set=set1"
-  },
-  {
-    "id": 10,
-    "firstName": "Maëlyss",
-    "lastName": "Vanini",
-    "email": "avanini9@sfgate.com",
-    "password": "kB2=ij$jJPzs+",
-    "category": "comprador",
-    "image": "https://robohash.org/suntautanimi.bmp?size=50x50&set=set1"
-  }
+    {
+        "id": 1,
+        "firstName": "Loïc",
+        "lastName": "Cleverley",
+        "email": "lcleverley0@cbc.ca",
+        "password": "vX8=/4`in,n",
+        "category": "comprador",
+        "image": "https://robohash.org/quiadictarepudiandae.jpg?size=50x50&set=set1"
+    },
+    {
+        "id": 2,
+        "firstName": "Alizée",
+        "lastName": "Franiak",
+        "email": "kfraniak1@ftc.gov",
+        "password": "rD0}l<kFR'/Gw",
+        "category": "comprador",
+        "image": "https://robohash.org/quialaudantiumharum.png?size=50x50&set=set1"
+    },
+    {
+        "id": 3,
+        "firstName": "Eugénie",
+        "lastName": "Ebbutt",
+        "email": "nebbutt2@berkeley.edu",
+        "password": "kU7/dDPH_|ey#hG",
+        "category": "comprador",
+        "image": "https://robohash.org/providentutrerum.png?size=50x50&set=set1"
+    },
+    {
+        "id": 4,
+        "firstName": "Adélaïde",
+        "lastName": "Clewarth",
+        "email": "jclewarth3@ft.com",
+        "password": "sY4?'DWJ\"KQkkw2u",
+        "category": "comprador",
+        "image": "https://robohash.org/odioperferendissit.jpg?size=50x50&set=set1"
+    },
+    {
+        "id": 5,
+        "firstName": "Gisèle",
+        "lastName": "Tunsley",
+        "email": "ntunsley4@biblegateway.com",
+        "password": "xY5`g\"@k_WF?",
+        "category": "comprador",
+        "image": "https://robohash.org/perferendiscumet.bmp?size=50x50&set=set1"
+    },
+    {
+        "id": 6,
+        "firstName": "Marie-françoise",
+        "lastName": "Kohrding",
+        "email": "jkohrding5@microsoft.com",
+        "password": "bD8}6,Gz2",
+        "category": "vendedor",
+        "image": "https://robohash.org/voluptatemautemquia.jpg?size=50x50&set=set1"
+    },
+    {
+        "id": 7,
+        "firstName": "Angèle",
+        "lastName": "Frushard",
+        "email": "sfrushard6@xinhuanet.com",
+        "password": "pG2@KM`z==",
+        "category": "comprador",
+        "image": "https://robohash.org/absitfuga.png?size=50x50&set=set1"
+    },
+    {
+        "id": 8,
+        "firstName": "Mélina",
+        "lastName": "Brambell",
+        "email": "pbrambell7@bing.com",
+        "password": "iR2&YL|c@N~q5i",
+        "category": "vendedor",
+        "image": "https://robohash.org/suscipitvoluptatumrem.jpg?size=50x50&set=set1"
+    },
+    {
+        "id": 9,
+        "firstName": "Daphnée",
+        "lastName": "Hebblewaite",
+        "email": "jhebblewaite8@nih.gov",
+        "password": "iP5=8r)QRE",
+        "category": "vendedor",
+        "image": "https://robohash.org/utmollitiaut.bmp?size=50x50&set=set1"
+    },
+    {
+        "id": 10,
+        "firstName": "Maëlyss",
+        "lastName": "Vanini",
+        "email": "avanini9@sfgate.com",
+        "password": "kB2=ij$jJPzs+",
+        "category": "comprador",
+        "image": "https://robohash.org/suntautanimi.bmp?size=50x50&set=set1"
+    }
 ]
