@@ -5,14 +5,15 @@ const userspath = path.join(__dirname, "../data/users.json")
 const users = JSON.parse(fs.readFileSync(userspath))
 
 
-const usersController= {
-   
+const usersController = {
+
     crear: (req, res) => {
-        res.render("register")
+        res.render("users/register")
     },
 
     create: (req, res) => {
         console.log(req.file);
+
         let newUser = {
             id: Date.now(),
             firstName: req.body.nombre,
@@ -22,20 +23,20 @@ const usersController= {
             category: req.body.categoria,
             image: req.file.filename
         };
-
+        console.log(newUser);
         users.push(newUser);
         fs.writeFileSync(userspath, JSON.stringify(users));
-        res.render("home",{products})
+        res.render("home", { products })
 
     },
-    
+
 }
 
-const logincontroller= (req, res) => {
-    res.render('login')
+const logincontroller = (req, res) => {
+    res.render('users/login')
 }
 
 module.exports = {
-    logincontroller ,
+    logincontroller,
     usersController
 }

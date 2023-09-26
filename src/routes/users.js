@@ -1,6 +1,8 @@
 const express = require('express');
 const multer = require('multer');
-const { usersController, logincontroller } = require('../controllers');
+// const {logincontroller } = require('../controllers');
+const { usersController } = require('../../../../sprints/grupo-11-DH/src/controllers/userController');
+const { logincontroller } = require('../../../../grupo-11-DH/src/controllers/userController');
 
 const userRouter = express.Router();
 
