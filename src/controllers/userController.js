@@ -3,12 +3,16 @@ const fs = require('fs')
 const bcrypt = require("bcryptjs")
 const userspath = path.join(__dirname, "../data/users.json")
 const users = JSON.parse(fs.readFileSync(userspath))
+const productspath = path.join(__dirname, "../data/productos.json");
+const products = JSON.parse(fs.readFileSync(productspath));
 
+
+
+// controlador de crear cuenta
 
 const usersController = {
-
     crear: (req, res) => {
-        res.render("users/register")
+        res.render("register")
     },
 
     create: (req, res) => {
@@ -29,14 +33,18 @@ const usersController = {
         res.render("home", { products })
 
     },
+    logincontroller : (req, res) => {
+    res.render('login')
+}
 
 }
 
-const logincontroller = (req, res) => {
-    res.render('users/login')
-}
+//comprobador de iniciar sesion
 
-module.exports = {
-    logincontroller,
-    usersController
-}
+
+
+
+
+module.exports = usersController;
+ 
+

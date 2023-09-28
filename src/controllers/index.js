@@ -27,5 +27,6 @@ const perfilesController= (req, res) => {
 module.exports = {
     homecontroller ,
     productCartcontroller,
-    perfilesController
+    perfilesController,
+    getProducts
 }

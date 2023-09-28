@@ -7,21 +7,22 @@
     
 </head>
 <body>
-
+  
+ 
     <header>
-        <%- include('../partials/header') %>
+        <%- include('partials/header') %>
     </header>
-    
-    <div class="form-container" id="form-conteiner">
-        <p class="title" id="title">Login</p>
-        <form class="form" id="form">
+   
+    <div class="form-container" id="form-conteiner" action="/">
+        <p class="title" id="title">techtropolis</p>
+        <form class="form" id="form" action="/user/login" method="POST">
             <div class="input-group" id="input-group">
-                <label for="username">Usuario   </label>
-                <input type="text" name="username" id="username" placeholder="">
+                <label for="email">Email  </label>
+                <input type="email" name="email" id="email" placeholder="">
             </div>
             <div class="input-group" id="input-group-1">
                 <label for="password" id="lebe">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="">
+                <input type="password" name="password" id="password" >
                 <div class="forgot">
                     <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
                 </div>
@@ -37,7 +38,7 @@
             <button aria-label="Log in with Google" class="icon">
                 <i class="fa-brands fa-google"></i>
             </button>
-            <button aria-label="Log in with Twitter" class="icon
+            <button aria-label="Log in with Twitter" class="icon" >
                 <i class="fa-brands fa-twitter"></i>
 
             <button aria-label="Log in with GitHub" class="icon">
@@ -49,6 +50,7 @@
         </p>
     </div>
     
-     <footer><%- include('../partials/footer') %></footer>
+     <footer><%- include('partials/footer') %></footer>
 </body> 
-</html> 
+</html> </html> 
+</html>

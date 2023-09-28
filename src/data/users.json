@@ -88,5 +88,32 @@
         "password": "kB2=ij$jJPzs+",
         "category": "comprador",
         "image": "https://robohash.org/suntautanimi.bmp?size=50x50&set=set1"
+    },
+    {
+        "id": 1695770583493,
+        "firstName": "Brian Joaquin",
+        "lastName": "Fernandez",
+        "email": "brianfernandez004@gmail.com",
+        "password": "$2a$10$UxKvQoP5ynHMEB/tCkKslOphGxZ5ArRGdaWcO8t2MRn4/CUnjflmS",
+        "category": "Comprador",
+        "image": "foto_usuario-1695770583482.jpg"
+    },
+    {
+        "id": 1695770658040,
+        "firstName": "Brian Joaquin",
+        "lastName": "Fernandez",
+        "email": "brianfernandez004@gmail.com",
+        "password": "$2a$10$7Uq3uMD/1BLRjANBFrKgveGQi0KATVS//Bb11t1FaeUbx0flLXmJW",
+        "category": "Comprador",
+        "image": "foto_usuario-1695770658031.jpg"
+    },
+    {
+        "id": 1695939768913,
+        "firstName": "Brian Joaquin",
+        "lastName": "Fernandez",
+        "email": "brianfernandez004@gmail.com",
+        "password": "$2a$10$4QrJ704EJwIvRsJbJDhgPegmZ58liZvvHdCpt2mIWU1wyQ9V3GUJS",
+        "category": "Comprador",
+        "image": "foto_usuario-1695939768905.jpg"
     }
 ]
