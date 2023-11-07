@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Iniciar sesión</title>
-    
-       <link rel="stylesheet" href="/css/login.css">
-    
+
+    <link rel="stylesheet" href="/css/login.css">
+
 </head>
+
 <body>
-  
- 
+
+
     <header>
         <%- include('partials/header') %>
     </header>
-   
+
     <div class="form-container" id="form-conteiner" action="/">
         <p class="title" id="title">techtropolis</p>
-        <form class="form" id="form" action="/user/login" method="POST">
+
+
+        <form class="form" id="form" action="/login" method="POST">
             <div class="input-group" id="input-group">
-                <label for="email">Email  </label>
+                <label for="email">Email </label>
                 <input type="email" name="email" id="email" placeholder="">
             </div>
+
             <div class="input-group" id="input-group-1">
                 <label for="password" id="lebe">Contraseña</label>
-                <input type="password" name="password" id="password" >
+                <input type="password" name="password" id="password">
                 <div class="forgot">
                     <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
                 </div>
             </div>
             <input type="submit" style="color: blanchedalmond;" value="inicia sesion " id="button">
         </form>
+
+
+
+
+
+
+
+
         <div class="social-message">
             <div class="line"></div>
             <p class="message">Iniciar sesión con cuentas sociales</p>
             <div class="line"></div>
         </div>
+
+
+
+
+
+
         <div class="social-icons">
             <button aria-label="Log in with Google" class="icon">
                 <i class="fa-brands fa-google"></i>
             </button>
-            <button aria-label="Log in with Twitter" class="icon" >
+            <button aria-label="Log in with Twitter" class="icon">
                 <i class="fa-brands fa-twitter"></i>
 
-            <button aria-label="Log in with GitHub" class="icon">
-                <i   class="fa-brands fa-github" ></i>
-            </button>
+                <button aria-label="Log in with GitHub" class="icon">
+                    <i class="fa-brands fa-github"></i>
+                </button>
         </div>
         <p class="signup">¿No tienes una cuenta?
             <a rel="noopener noreferrer" href="/register" class="">registrarse aqui</a>
         </p>
     </div>
-    
-     <footer><%- include('partials/footer') %></footer>
-</body> 
-</html> </html> 
+
+    <footer><%- include('partials/footer') %></footer>
+</body>
+
+</html>
+
+</html>
+
 </html>

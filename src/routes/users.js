@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage})
 
 userRouter.get('/login', usersController.logincontroller);
+userRouter.post('/login' , usersController.loginvalidar)
 
 userRouter.get('/register', usersController.crear);
 userRouter.post('/register',upload.single("foto_usuario"), usersController.create);

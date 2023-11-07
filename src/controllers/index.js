@@ -22,7 +22,7 @@ const productCartcontroller= (req, res) => {
 }
 const perfilesController= (req, res) => {
     res.render('users/perfiles')
-}
+}   
 
 module.exports = {
     homecontroller ,

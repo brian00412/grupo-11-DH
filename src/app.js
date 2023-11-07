@@ -12,7 +12,7 @@ app.set("views", "src/views");
 
 app.listen(8001, () => {
     console.log(
-        `servidor funcionando`,
+        `servidor funcionando en el 8001`,
 
     )
 });
@@ -20,6 +20,7 @@ app.listen(8001, () => {
 app.use('/', router);
 
 app.use('/', userRouter);
+app.use('/user', userRouter);
 
 app.use("/", routerProduct);
 

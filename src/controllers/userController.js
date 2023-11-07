@@ -33,18 +33,41 @@ const usersController = {
         res.render("home", { products })
 
     },
-    logincontroller : (req, res) => {
-    res.render('login')
-}
+
+
+    // Login controller
+
+    logincontroller: (req, res) => {
+        res.render('login')
+
+    },
+
+    loginvalidar: (req, res) => {
+        const datouser = users
+        const gmail = req.body.email
+        const contra = req.body.password
+        let userperfil = false
+
+        for (let i = 0; i < datouser.length; i++) {
+            if (datouser[i].email === gmail) {
+            } if (datouser[i].password === contra) {
+                userperfil = true;
+                break;
+            }
+        }
+        if (userperfil){
+            res.redirect("/");
+        }
+        else{
+            res.send("el usurio no existe")
+        }
+    }
+
+
 
 }
-
-//comprobador de iniciar sesion
-
 
 
 
 
 module.exports = usersController;
- 
-
