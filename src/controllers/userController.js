@@ -5,6 +5,9 @@ const userspath = path.join(__dirname, "../data/users.json")
 const users = JSON.parse(fs.readFileSync(userspath))
 const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
+const { DataTypes } = require('sequelize');
+const sequelize = require('../../database/config/config');
+// const usersi = require('../database/models/')
 
 
 
