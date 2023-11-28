@@ -1,13 +1,11 @@
 const path = require('path')
 const fs = require('fs')
 const bcrypt = require("bcryptjs")
-const userspath = path.join(__dirname, "../data/users.json")
-const users = JSON.parse(fs.readFileSync(userspath))
+// const userspath = path.join(__dirname, "../data/users.json")
+// const users = JSON.parse(fs.readFileSync(userspath))
 const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
-const { DataTypes } = require('sequelize');
-const sequelize = require('../../database/config/config');
-// const usersi = require('../database/models/')
+const User = require('../../database/models/users');
 
 
 
@@ -18,7 +16,7 @@ const usersController = {
         res.render("register")
     },
 
-    create: (req, res) => {
+    create: async (req, res) => {
         console.log(req.file);
 
         let newUser = {
@@ -30,10 +28,20 @@ const usersController = {
             category: req.body.categoria,
             image: req.file.filename
         };
-        console.log(newUser);
-        users.push(newUser);
-        fs.writeFileSync(userspath, JSON.stringify(users));
-        res.render("home", { products })
+
+        try {
+            const user = await newUser.query(User);
+            console.log(User);
+            res.render('home', { products });
+         } catch (error) {
+            console.log(error);
+            res.status(500).send('error');
+         }
+
+        // console.log(newUser);
+        // users.push(newUser);
+        // fs.writeFileSync(userspath, JSON.stringify(users));
+        // res.render("home", { products })
 
     },
 
@@ -46,7 +54,7 @@ const usersController = {
     },
 
     loginvalidar: (req, res) => {
-        const datouser = users
+        const datouser = User
         const gmail = req.body.email
         const contra = req.body.password
         let userperfil = false

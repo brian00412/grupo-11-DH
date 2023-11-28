@@ -1,48 +1,60 @@
-const { Sequelize, sequelize } = require(".");
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+const { Sequelize, DataTypes } = require('sequelize');
 
-module.exports = (Sequelize, DataTypes) =>  {
-    const Product = sequelize.define( 'Product' , {
-        id : {
-            type: DataTypes.INTEGER
-           
-        },
-        nombre : {
-            type: DataTypes.STRING,
-            
-        },
-        descripcion : {
-            type: DataTypes.TEXT,
-            
-        },
-        categoria : {
-            type: DataTypes.STRING,
-            
-        },
-        precio : {
-            type: DataTypes.INTEGER,
-            
-        },
-        descuento : {
-            type: DataTypes.STRING,
-            
-        },
-        color : {
-            type: DataTypes.STRING,
-            
-        },
-        imagen : {
-            type: DataTypes.STRING,
-            
-        },
-        delet : {
-            type: DataTypes.BOOLEAN,
-            
-        }
+const sequelize = new Sequelize('grupo_11_datos', 'root', null, {
+    host: 'localhost',
+    dialect: 'mysql',
+});
+
+
+const Product = sequelize.define('Product', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey : true
+
+
+    },
+    nombre: {
+        type: DataTypes.STRING,
+
+    },
+    descripcion: {
+        type: DataTypes.TEXT,
+
+    },
+    categoria: {
+        type: DataTypes.STRING,
+
+    },
+    precio: {
+        type: DataTypes.INTEGER,
+
+    },
+    descuento: {
+        type: DataTypes.STRING,
+
+    },
+    color: {
+        type: DataTypes.STRING,
+
+    },
+    imagen: {
+        type: DataTypes.STRING,
+
+    },
+    delet: {
+        type: DataTypes.BOOLEAN,
+
     }
-    )
 }
-Product.sync();
+)
+
+sequelize.sync()
+    .then(() => {
+        console.log('Estoy Conectado Soy Product :O');
+    })
+    .catch((error) => {
+        console.error('Algo fallo con los datos :(', error);
+    });
+
 
 module.exports = Product;
