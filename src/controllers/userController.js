@@ -7,6 +7,7 @@ const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
 const db = require('../../database/models');
 
+const { validationResult } = require('express-validator');
 
 
 
@@ -17,9 +18,9 @@ const usersController = {
     StoreUser : (req, res) => {
         let error = validationResult(req);
         res.send(error)
-    // if (!error.isEmpty()){
-    //     return res.render("register",{mensajesDeError : error.mapped()})
-    // } 
+    if (!error.isEmpty()){
+        return res.render("register",{mensajesDeError : error.mapped()})
+    } 
 },
 
     crear: (req, res) => {
@@ -35,8 +36,18 @@ const usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password),
             category: req.body.categoria,
-            image: req.file.fileName 
-        };
+            // image: req.file.filename, 
+        };  
+
+        const validation = validationResult(req);
+
+        if (!validation.isEmpty()) {
+        console.log( validation);
+            res.render ('register',{
+                errors : validation.errors})
+            return;};
+
+        
 
         try {
             await db.User.create(newUser) 

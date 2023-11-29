@@ -2,15 +2,15 @@ const express = require('express');
 const multer = require('multer');
 const usersController = require ('../controllers/userController')
 const { validationResult } = require ('express-validator')
-const {body} = require('express-validator');
-
+const { check } = require ('express-validator')
+ 
 const validaciones = [
-    body('nombre').notEmpty().withMessage ('Tenes que poner tu nombre').bail().isLength({min: 2, max:20}),
-    body('apellido').notEmpty().withMessage ('Tenes que poner tu apellido').isLength({min: 2, max:20}),
-    body('email').notEmpty().isEmail ().withMessage ('Tenes que poner tu apellido'),
-    body('password').notEmpty().withMessage ('pone tu contra 🤫').isLength({min: 8, max:100}),
-    body('categoria').notEmpty().withMessage ('no sabemos a que vienes '),
-    body('fileName').notEmpty().withMessage ('seleciona una imagen :0').isIn([ "PNG", "JPEG", "GIF" ]),
+    check('nombre').notEmpty().withMessage ('Tenes que poner tu nombre 🙂').bail().isLength({min: 2, max:20}) .withMessage ('minimo 2 caracteres'),
+    check('apellido').notEmpty().withMessage ('Tenes que poner tu apellido😃').bail().isLength({min: 2, max:20}) .withMessage ('minimo 2 caracteres'),
+    check('email').notEmpty().withMessage ('Tenes que poner tu gmail 📧').bail().isEmail().withMessage ('tiene que ser un gmail exitente'),
+    check('password').notEmpty().withMessage ('pone tu contra 🤫').bail().isLength({min: 8, max:100}).withMessage ('tiene que tener entre 8 a 20 caracteres🤫'),
+    check('categoria').notEmpty().withMessage ('no sabemos a que vienes '),
+    check('foto_usuario').notEmpty().withMessage ('seleciona una imagen 📷'),
 ]
 
 
@@ -32,6 +32,6 @@ userRouter.get('/login', usersController.logincontroller);
 userRouter.post('/login' , usersController.loginvalidar)
 
 userRouter.get('/register', usersController.crear);
-userRouter.post('/register',upload.single("foto_usuario"),validaciones,usersController.create);
+userRouter.post('/register', upload.single("foto_usuario"),validaciones,usersController.create,);
 
 module.exports = userRouter ;
