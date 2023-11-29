@@ -9,9 +9,19 @@ const db = require('../../database/models');
 
 
 
+
+
 // controlador de crear cuenta
 
 const usersController = {
+    StoreUser : (req, res) => {
+        let error = validationResult(req);
+        res.send(error)
+    // if (!error.isEmpty()){
+    //     return res.render("register",{mensajesDeError : error.mapped()})
+    // } 
+},
+
     crear: (req, res) => {
         res.render("register")
     },
@@ -25,7 +35,7 @@ const usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password),
             category: req.body.categoria,
-            image: req.file.filename
+            image: req.file.fileName 
         };
 
         try {
@@ -59,10 +69,11 @@ const usersController = {
 
         for (let i = 0; i < datouser.length; i++) {
             if (datouser[i].email === gmail) {
-            } if (datouser[i].password === contra) {
+            } if (comparedatouser[i].password === contra.compare) {
                 userperfil = true;
                 break;
             }
+            
         }
         if (userperfil){
             res.redirect("/");

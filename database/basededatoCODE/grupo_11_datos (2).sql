@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2023 a las 23:33:14
+-- Tiempo de generación: 29-11-2023 a las 17:17:56
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -50,9 +50,9 @@ CREATE TABLE `users` (
   `firstName` varchar(30) NOT NULL,
   `lastName` varchar(30) NOT NULL,
   `email` varchar(40) NOT NULL,
-  `password` varchar(15) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `category` int(10) UNSIGNED NOT NULL,
-  `image` int(10) UNSIGNED NOT NULL
+  `image` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -66,6 +66,12 @@ ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -73,6 +79,12 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
