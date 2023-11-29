@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs")
 // const users = JSON.parse(fs.readFileSync(userspath))
 const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
-const User = require('../../database/models/users');
+const db = require('../../database/models');
 
 
 
@@ -20,7 +20,6 @@ const usersController = {
         console.log(req.file);
 
         let newUser = {
-            id: Date.now(),
             firstName: req.body.nombre,
             lastName: req.body.apellido,
             email: req.body.email,
@@ -30,14 +29,13 @@ const usersController = {
         };
 
         try {
-            const user = await newUser.query(User);
-            console.log(User);
+            await db.User.create(newUser) 
+            console.log();
             res.render('home', { products });
          } catch (error) {
             console.log(error);
             res.status(500).send('error');
-         }
-
+         }   
         // console.log(newUser);
         // users.push(newUser);
         // fs.writeFileSync(userspath, JSON.stringify(users));

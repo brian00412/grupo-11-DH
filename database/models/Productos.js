@@ -1,60 +1,43 @@
-const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('grupo_11_datos', 'root', null, {
-    host: 'localhost',
-    dialect: 'mysql',
-});
+module.exports = function (sequelize, DataTypes) {
 
+    const rows = {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true
+        },
+        nombre: {
+            type: DataTypes.STRING,
+        },
+        descripcion: {
+            type: DataTypes.TEXT,
+        },
+        categoria: {
+            type: DataTypes.STRING,
+        },
+        precio: {
+            type: DataTypes.INTEGER,
+        },
+        descuento: {
+            type: DataTypes.STRING,
+        },
+        color: {
+            type: DataTypes.STRING,
+        },
+        imagen: {
+            type: DataTypes.STRING,
 
-const Product = sequelize.define('Product', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey : true
-
-
-    },
-    nombre: {
-        type: DataTypes.STRING,
-
-    },
-    descripcion: {
-        type: DataTypes.TEXT,
-
-    },
-    categoria: {
-        type: DataTypes.STRING,
-
-    },
-    precio: {
-        type: DataTypes.INTEGER,
-
-    },
-    descuento: {
-        type: DataTypes.STRING,
-
-    },
-    color: {
-        type: DataTypes.STRING,
-
-    },
-    imagen: {
-        type: DataTypes.STRING,
-
-    },
-    delet: {
-        type: DataTypes.BOOLEAN,
-
+        },
+        delet: {
+            type: DataTypes.BOOLEAN,
+        }
     }
+    const config = {
+        tableName: 'producto',
+        timestamps: false,
+    }
+    
+    const product = sequelize.define('Product',rows,config);
+
+    return product;
 }
-)
-
-sequelize.sync()
-    .then(() => {
-        console.log('Estoy Conectado Soy Product :O');
-    })
-    .catch((error) => {
-        console.error('Algo fallo con los datos :(', error);
-    });
-
-
-module.exports = Product;

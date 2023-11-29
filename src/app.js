@@ -11,10 +11,7 @@ app.set("view engine", "ejs");
 app.set("views", "src/views");
 
 app.listen(8001, () => {
-    console.log(
-        `servidor funcionando en el 8001`,
-
-    )
+    console.log( `servidor funcionando en el 8001`)
 });
 
 app.use('/', router);

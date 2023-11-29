@@ -1,49 +1,43 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const config = require("../config/config");
 
-const sequelize = new Sequelize('grupo_11_datos', 'root', null, {
-    host: 'localhost',
-    dialect: 'mysql',
-});
+module.exports = function (sequelize, DataTypes) {
+    const rows = {
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true
 
-const users = sequelize.define('users', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey : true
+        },
+        firstName: {
+            type: DataTypes.STRING,
 
-    },
-    firstName: {
-        type: DataTypes.STRING,
+        },
+        lastName: {
+            type: DataTypes.TEXT,
 
-    },
-    lastName: {
-        type: DataTypes.TEXT,
+        },
+        email: {
+            type: DataTypes.STRING,
 
-    },
-    email: {
-        type: DataTypes.STRING,
+        },
+        password: {
+            type: DataTypes.INTEGER,
 
-    },
-    password: {
-        type: DataTypes.INTEGER,
+        },
+        category: {
+            type: DataTypes.STRING,
 
-    },
-    category: {
-        type: DataTypes.STRING,
+        },
+        image: {
+            type: DataTypes.STRING,
 
-    },
-    image: {
-        type: DataTypes.STRING,
-
+        }
     }
+    const config = {
+        tableName: 'users',
+        timestamps: false ,
+    }
+    const users = sequelize.define('User', rows,config)
+
+    return users
 }
-)
-
-sequelize.sync()
-    .then(() => {
-        console.log('Estoy Conectado, Soy users :O');
-    })
-    .catch((error) => {
-        console.error('Algo fallo con los datos :(', error);
-    });
-
-module.exports = users;
+    
