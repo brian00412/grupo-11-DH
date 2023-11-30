@@ -8,7 +8,9 @@ const db = require('../../database/models');
 
 const productController = {
     listado: (req , res) => {
-            res.render("products/products",{products})
+            db.Product.findAll()
+            .then((products)=>{
+            return res.render("products/products", {products})})
           },
 
     detalles: (req, res) => {
@@ -24,7 +26,6 @@ const productController = {
     create: (req, res) => {
         console.log(req.file);
         let nuevoProducto = {
-            id: Date.now(),
             nombre: req.body.name,
             descripcion: req.body.description.split(","),
             categoria: req.body.category,
@@ -34,10 +35,18 @@ const productController = {
             imagen: req.file.filename,
             delete: false,
         };
+        
+        try {
+            db.Product.create(nuevoProducto) 
+            res.render('home', { products });
+         } catch (error) {
+            console.log(error);
+            res.status(500).send('error');
+         }  
 
-        products.push(nuevoProducto);
-        fs.writeFileSync(productspath, JSON.stringify(products));
-        res.render("home",{products})
+        // products.push(nuevoProducto);
+        // fs.writeFileSync(productspath, JSON.stringify(products));
+        // res.render("home",{products})
     },
 
     editarForm: (req, res) => {
