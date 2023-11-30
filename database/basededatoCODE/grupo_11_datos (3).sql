@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2023 a las 17:17:56
+-- Tiempo de generación: 30-11-2023 a las 23:33:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -30,13 +30,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `producto` (
   `id` int(10) UNSIGNED NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `descripcion` int(10) UNSIGNED NOT NULL,
-  `categoria` int(10) UNSIGNED NOT NULL,
-  `precio` int(10) UNSIGNED NOT NULL,
-  `descuento` int(10) UNSIGNED NOT NULL,
-  `color` int(10) UNSIGNED NOT NULL,
-  `imagen` int(10) UNSIGNED NOT NULL,
-  `delet` bit(1) DEFAULT NULL
+  `descripcion` varchar(500) NOT NULL,
+  `categoria` varchar(20) NOT NULL,
+  `precio` mediumtext NOT NULL,
+  `descuento` varchar(100) NOT NULL,
+  `color` varchar(20) NOT NULL,
+  `imagen` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -52,7 +51,7 @@ CREATE TABLE `users` (
   `email` varchar(40) NOT NULL,
   `password` varchar(200) NOT NULL,
   `category` int(10) UNSIGNED NOT NULL,
-  `image` varchar(200) DEFAULT NULL
+  `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
