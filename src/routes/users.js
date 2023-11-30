@@ -10,7 +10,6 @@ const validaciones = [
     check('email').notEmpty().withMessage ('Tenes que poner tu gmail 📧').bail().isEmail().withMessage ('tiene que ser un gmail exitente'),
     check('password').notEmpty().withMessage ('pone tu contra 🤫').bail().isLength({min: 8, max:100}).withMessage ('tiene que tener entre 8 a 20 caracteres🤫'),
     check('categoria').notEmpty().withMessage ('no sabemos a que vienes '),
-    check('foto_usuario').notEmpty().withMessage ('seleciona una imagen 📷'),
 ]
 
 

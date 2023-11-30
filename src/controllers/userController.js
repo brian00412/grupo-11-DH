@@ -1,18 +1,18 @@
 const path = require('path')
 const fs = require('fs')
 const bcrypt = require("bcryptjs")
+// const compare = require("bcrypt")
 // const userspath = path.join(__dirname, "../data/users.json")
 // const users = JSON.parse(fs.readFileSync(userspath))
 const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
 const db = require('../../database/models');
 
+
 const { validationResult } = require('express-validator');
 
 
 
-
-// controlador de crear cuenta
 
 const usersController = {
     StoreUser : (req, res) => {
@@ -28,6 +28,7 @@ const usersController = {
     },
 
     create: async (req, res) => {
+
         console.log(req.file);
 
         let newUser = {
@@ -36,15 +37,15 @@ const usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password),
             category: req.body.categoria,
-            // image: req.file.filename, 
-        };  
+            image: req.file ? req.file.filename : 'Sinfoto.jpg', 
+        };
 
         const validation = validationResult(req);
 
         if (!validation.isEmpty()) {
-        console.log( validation);
+        console.log(validation.mapped())
             res.render ('register',{
-                errors : validation.errors})
+                errors : validation.mapped()})
             return;};
 
         
@@ -80,10 +81,11 @@ const usersController = {
 
         for (let i = 0; i < datouser.length; i++) {
             if (datouser[i].email === gmail) {
-            } if (comparedatouser[i].password === contra.compare) {
+            } if (comparedatouser[i].password === contra) {
                 userperfil = true;
                 break;
-            }
+            } 
+                
             
         }
         if (userperfil){

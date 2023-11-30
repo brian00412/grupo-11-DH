@@ -23,22 +23,22 @@ const productController = {
         res.render("products/crearProduct")
     },
 
-    create: (req, res) => {
+    create: async (req, res) => {
         console.log(req.file);
         let nuevoProducto = {
             nombre: req.body.name,
-            descripcion: req.body.description.split(","),
+            descripcion: req.body.description,
             categoria: req.body.category,
             precio: req.body.price,
             descuento: req.body.descuento,
             color: req.body.color,
             imagen: req.file.filename,
-            delete: false,
         };
         
         try {
-            db.Product.create(nuevoProducto) 
+         await  db.Product.create(nuevoProducto) 
             res.render('home', { products });
+            console.log ('llego el dato')
          } catch (error) {
             console.log(error);
             res.status(500).send('error');
