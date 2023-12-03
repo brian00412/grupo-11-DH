@@ -3,15 +3,17 @@ const path = require("path");
 const productspath = path.join(__dirname, "../data/productos.json");
 const products = JSON.parse(fs.readFileSync(productspath));
 const db = require('../../database/models');
-
+const { validationResult } = require('express-validator');
+const { raw } = require('mysql2');
 
 
 const productController = {
-    listado: (req , res) => {
-            db.Product.findAll()
-            .then((products)=>{
-            return res.render("products/products", {products})})
-          },
+    listado: (req, res) => {
+        db.Product.findAll()
+            .then((products) => {
+                return res.render("products/products", { products })
+            })
+    },
 
     detalles: (req, res) => {
         let id = req.params.id;
@@ -32,17 +34,28 @@ const productController = {
             precio: req.body.price,
             descuento: req.body.descuento,
             color: req.body.color,
-            imagen: req.file.filename,
+            imagen: req.file ? req.file.filename : 'Productonoimg.jpg',
         };
-        
+
+        const validation = validationResult(req);
+
+        if (!validation.isEmpty()) {
+            console.log(validation.mapped())
+            res.render('products/crearProduct', {
+                errors: validation.mapped()
+            })
+            return;
+        };
+
+
         try {
-         await  db.Product.create(nuevoProducto) 
+            await db.Product.create(nuevoProducto)
             res.render('home', { products });
-            console.log ('llego el dato')
-         } catch (error) {
+            console.log('llego el dato')
+        } catch (error) {
             console.log(error);
             res.status(500).send('error');
-         }  
+        }
 
         // products.push(nuevoProducto);
         // fs.writeFileSync(productspath, JSON.stringify(products));
@@ -56,10 +69,10 @@ const productController = {
     },
 
     editar: (req, res) => {
-        let id = req.params.id -1;
-        let product = products.find(p => p.id-1== id);
+        let id = req.params.id - 1;
+        let product = products.find(p => p.id - 1 == id);
         let imagen;
-        if(req.file){
+        if (req.file) {
             imagen = req.file.filename
         } else {
             imagen = product.imagen
@@ -76,17 +89,29 @@ const productController = {
             delete: false,
         }
 
+        const validationEdit = validationResult(req);
+
+        if (!validationEdit.isEmpty()) {
+            console.log(validationEdit.mapped())
+            res.render('products/editarProducto', {
+                errors: validationEdit.mapped()
+            })
+            return;
+        };
+
+
+
         products.splice(id, 1, productoEditado);
         fs.writeFileSync(productspath, JSON.stringify(products));
-        res.render("home",{products})
+        res.render("home", { products })
     },
 
-    eliminar: (req,res)=>{
+    eliminar: (req, res) => {
         let id = req.params.id;
         let product = products.find(p => p.id == id);
         product.delete = true;
         fs.writeFileSync(productspath, JSON.stringify(products));
-        res.render("home",{products})
+        res.render("home", { products })
     }
 
 }

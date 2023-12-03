@@ -16,18 +16,39 @@
     </header>
 
     <div class="form-container" id="form-conteiner" action="/">
-        <p class="title" id="title">techtropolis</p>
+        <p class="title" id="title">techtropolis</p>    
+        <% if (typeof errors !=='undefined' && errors.length !==0) { %>
+
+            <h2>complete el Formulario</h2>
+
+
+
+
+            <% } %>
 
 
         <form class="form" id="form" action="/login" method="POST">
             <div class="input-group" id="input-group">
                 <label for="email">Email </label>
-                <input type="email" name="email" id="email" placeholder="">
+                
+
+                <input type="email" name="email" id="email" placeholder=""><br>
+                <% if (typeof errors !=='undefined' && errors.email ) { %>
+
+                    <%= errors.email.msg %>
+
+                        <% } %>
             </div>
 
             <div class="input-group" id="input-group-1">
                 <label for="password" id="lebe">Contraseña</label>
-                <input type="password" name="password" id="password">
+                
+                <input type="password" name="password" id="password"><br>
+                <% if (typeof errors !=='undefined' && errors.password ) { %>
+                    
+                    <%= errors.password.msg %>
+
+                        <% } %>
                 <div class="forgot">
                     <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
                 </div>
@@ -49,7 +70,7 @@
         </div>
 
 
-
+        
 
 
 

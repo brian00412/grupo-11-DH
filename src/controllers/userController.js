@@ -10,9 +10,22 @@ const db = require('../../database/models');
 
 
 const { validationResult } = require('express-validator');
+const { raw } = require('mysql2');
+///////////////// zona de pruebas //////////////////
+
+
+// db.User.findAll( {raw: true})
+// .then ((datos) => {
+//     console.log ('soy yo datos users')
+//      console.log(datos)
+//     //  const datosRay = datos.map(function (user){
+//     //  })
+//     //  console.log(datos) 
+// }) ;
 
 
 
+////////////////////////////////////////////////////
 
 const usersController = {
     StoreUser : (req, res) => {
@@ -58,6 +71,8 @@ const usersController = {
             console.log(error);
             res.status(500).send('error');
          }   
+
+         
         // console.log(newUser);
         // users.push(newUser);
         // fs.writeFileSync(userspath, JSON.stringify(users));
@@ -74,11 +89,19 @@ const usersController = {
     },
 
     loginvalidar: (req, res) => {
-        const datouser = User
+        
         const gmail = req.body.email
         const contra = req.body.password
         let userperfil = false
 
+        const validationuser = validationResult(req);
+
+        if (!validationuser.isEmpty()) {
+        console.log(validationuser.mapped())
+            res.render ('login',{
+                errors : validationuser.mapped()})
+            return;};
+////       terminar usuario 
         for (let i = 0; i < datouser.length; i++) {
             if (datouser[i].email === gmail) {
             } if (comparedatouser[i].password === contra) {
@@ -88,12 +111,12 @@ const usersController = {
                 
             
         }
-        if (userperfil){
-            res.redirect("/");
-        }
-        else{
-            res.send("el usurio no existe")
-        }
+        // if (userperfil){
+        //     res.redirect("home");
+        // }
+        // else{
+        //     res.send("el usurio no existe")
+        // }
     }
 
 
