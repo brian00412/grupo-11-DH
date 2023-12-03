@@ -6,7 +6,7 @@ const { check } = require ('express-validator')
 
 const validacionesCreateProduc = [
     check('name').notEmpty().withMessage('Pon el nombre del producto').isLength({min: 5, max:100}),
-    check('description').notEmpty().withMessage('Pon la descripcion del producto').bail().isLength({min: 20, max:200}).withMessage('    tiene que tener mas de 20 caracteres'),
+    check('description').notEmpty().withMessage('Pon la descripcion del producto').bail().isLength({min: 10, max:200}).withMessage('    tiene que tener mas de 10 caracteres'),
     check('category').notEmpty().withMessage('categoria de tu producto'),
     check('price').notEmpty().withMessage('pon aqui el precio de tu producto'),
     check('descuento').notEmpty().withMessage('aqui tu descuento'),

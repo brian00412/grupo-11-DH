@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,92 +11,94 @@
     <link rel="stylesheet" href="/css/productDetail.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
 
     <%- include("../partials/header") %>
 
-    <main>
-        <form class="crearP" action="" method="post" enctype="multipart/form-data">
-            <h3 class="h3">Editar un producto</h3>
-            <div>
-                <label for="name">Nombre: </label>
-                <input type="text" name="name" id="name"  value= "<%= product.nombre %>">
-                
-                <br>
-                <% if (typeof errors !=='undefined' && errors.name ) { %>
-                    
-                    <%= errors.name.msg %>
+        <main>
+            <form class="crearP" action="/editarProducto/<%= product.id %>" method="post" enctype="multipart/form-data">
+                <h3 class="h3">Editar un producto</h3>
+                <div>
+                    <label for="name">Nombre: </label>
+                    <input type="text" name="name" id="name" value="<%= product.nombre %>">
 
-                        <% } %>
-            </div>
-            <div>
-                <label for="description">Descripción: </label>
-                <input type="text" name="description" id="description"  value=" <%= product.descripcion %>">
-                <br>
-                <% if (typeof errors !=='undefined' && errors.description ) { %>
-                    
-                    <%= errors.description.msg %>
+                    <br>
+                    <% if (typeof errors !=='undefined' && errors.name ) { %>
 
-                        <% } %>
-            </div>
-            <div>
-                <label for="image">imagen: </label>
-                <input type="file" name="image" id="image"  value=" <%= product.imagen %>">
-                <br>
-                <% if (typeof errors !=='undefined' && errors.imagen ) { %>
-                    
-                    <%= errors.imagen.msg %>
+                        <%= errors.name.msg %>
 
-                        <% } %>
-            </div>
-            <div>
-                <label for="category">Categoria: </label>
-                <input type="text" name="category" id="category" value=" <%= product.categoria %>"><br>
-                <% if (typeof errors !=='undefined' && errors.category ) { %>
-                    
-                    <%= errors.category.msg %>
+                            <% } %>
+                </div>
+                <div>
+                    <label for="description">Descripción: </label>
+                    <input type="text" name="description" id="description" value=" <%= product.descripcion %>">
+                    <br>
+                    <% if (typeof errors !=='undefined' && errors.description ) { %>
 
-                        <% } %>>
-            </div>
-            <div>
-                <label for="color">Color: </label>
-                <input type="text" name="color" id="color" value=" <%= product.color %>"><br>
-                <% if (typeof errors !=='undefined' && errors.color ) { %>
-                    
-                    <%= errors.color.msg %>
+                        <%= errors.description.msg %>
 
-                        <% } %>
-            </div>
-            <div>
-                <label for="price">Precio: </label>
-                <input type="text" name="price" id="price" value=" <%= product.precio %>">
-                <br>
-                <% if (typeof errors !=='undefined' && errors.price ) { %>
-                    
-                    <%= errors.price.msg %>
+                            <% } %>
+                </div>
+                <div>
+                    <label for="image">imagen: </label>
+                    <input type="file" name="image" id="image" value=" <%= product.imagen %>">
+                    <br>
+                    <% if (typeof errors !=='undefined' && errors.imagen ) { %>
 
-                        <% } %>
-            </div>
-            <div>
-                <label for="descuento">Descuento: </label>
-                <input type="text" name="descuento" id="descuento" value=" <%= product.descuento %>"><br>
-                <% if (typeof errors !=='undefined' && errors.descuento ) { %>
-                    
-                    <%= errors.descuento.msg %>
+                        <%= errors.imagen.msg %>
 
-                        <% } %>
-            </div>
-            <article class="botonEnviar">
-                <button class="enviar" type="submit">Enviar</button>
-            </article> 
-            <article class="botonEnviar">
-                <button class="reset" type="reset">Restaurar</button>
-            </article>
-            <p><a class="editar" href="/crearProduct">Crear un producto</a></p>
-        </form>
-    </main>
+                            <% } %>
+                </div>
+                <div>
+                    <label for="category">Categoria: </label>
+                    <input type="text" name="category" id="category" value=" <%= product.categoria %>"><br>
+                    <% if (typeof errors !=='undefined' && errors.category ) { %>
 
-    <%- include("../partials/footer") %>
+                        <%= errors.category.msg %>
+
+                            <% } %>>
+                </div>
+                <div>
+                    <label for="color">Color: </label>
+                    <input type="text" name="color" id="color" value=" <%= product.color %>"><br>
+                    <% if (typeof errors !=='undefined' && errors.color ) { %>
+
+                        <%= errors.color.msg %>
+
+                            <% } %>
+                </div>
+                <div>
+                    <label for="price">Precio: </label>
+                    <input type="text" name="price" id="price" value=" <%= product.precio %>">
+                    <br>
+                    <% if (typeof errors !=='undefined' && errors.price ) { %>
+
+                        <%= errors.price.msg %>
+
+                            <% } %>
+                </div>
+                <div>
+                    <label for="descuento">Descuento: </label>
+                    <input type="text" name="descuento" id="descuento" value=" <%= product.descuento %>"><br>
+                    <% if (typeof errors !=='undefined' && errors.descuento ) { %>
+
+                        <%= errors.descuento.msg %>
+
+                            <% } %>
+                </div>
+                <article class="botonEnviar">
+                    <button class="enviar" type="submit">Enviar</button>
+                </article>
+                <article class="botonEnviar">
+                    <button class="reset" type="reset">Restaurar</button>
+                </article>
+                <p><a class="editar" href="/crearProduct">Crear un producto</a></p>
+            </form>
+        </main>
+
+        <%- include("../partials/footer") %>
 
 </body>
+
 </html>

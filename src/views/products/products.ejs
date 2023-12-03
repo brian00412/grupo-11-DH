@@ -16,40 +16,38 @@
     <main>
         <h2>Listado De Producto</h2>
         <div class="formalsita">
-            <% products.forEach(product=> { %>
-                <% if(product.delete==false ){ %>
-                    <div class="produptos">
-                        <div class="prupto">
-                            <a href="/productDetail/<%= product.id %>">
-                                <img src="/images/productos/<%= product.imagen %>" class="imagen-produp" alt="">
-                                <div class="informacion-produpto">
-                                    <p class="descueto-produp">
-                                        <%= product.descuento %>% off
-                                    </p>
-                                    <p class="precion-produp">$<%= new Intl.NumberFormat().format(product.precio) %>
-                                    </p>
-                                    <p class="nombre-produp">
-                                        <%= product.nombre %>
-                                    </p>
-                            </a>
-
-
-
-                            <div class="botton-produc">
-                                </form>
-
-
-                                <a href="/editarProducto/<%= product.id %>">
-                                    <p>Editar</p>
+                <% products.forEach(product=> { %>
+                        <div class="produptos">
+                            <div class="prupto">
+                                <a href="/productDetail/<%= product.id %>">
+                                    <img src="/images/productos/<%= product.imagen %>" class="imagen-produp" alt="">
+                                    <div class="informacion-produpto">
+                                        <p class="descueto-produp">
+                                            <%= product.descuento %>% off
+                                        </p>
+                                        <p class="precion-produp">$<%= new Intl.NumberFormat().format(product.precio) %>
+                                        </p>
+                                        <p class="nombre-produp">
+                                            <%= product.nombre %>
+                                        </p>
                                 </a>
-                                <form action="/eliminarProducto/<%= product.id %>" method="post">
-                                    <button>Eliminar</button>
-                                </form>
+
+
+
+                                <div class="botton-produc">
+                                    </form>
+
+
+                                    <a href="/editarProducto/<%= product.id %>">
+                                        <p>Editar</p>
+                                    </a>
+                                    <form action="/eliminarProducto/<%= product.id %>" method="post">
+                                        <button>Eliminar</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
         </div>
-        <% } %>
             <% }); %>
 
 

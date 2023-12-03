@@ -9,16 +9,26 @@ const { raw } = require('mysql2');
 
 const productController = {
     listado: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({ raw: true })
             .then((products) => {
                 return res.render("products/products", { products })
+            })
+            .catch(error => {
+                console.log(error);
+                res.status(500).send('error');
             })
     },
 
     detalles: (req, res) => {
         let id = req.params.id;
-        let product = products.find(p => p.id == id)
-        res.render("products/productDetail", { product });
+        db.Product.findByPk(id, { raw: true })
+            .then(product => {
+                res.render("products/productDetail", { product });
+            })
+            .catch(error => {
+                console.log(error);
+                res.status(500).send('error');
+            })
     },
 
     crear: (req, res) => {
@@ -34,7 +44,7 @@ const productController = {
             precio: req.body.price,
             descuento: req.body.descuento,
             color: req.body.color,
-            imagen: req.file ? req.file.filename : 'Productonoimg.jpg',
+            imagen: req.file ? req.file.filename : 'Productonoimg.png',
         };
 
         const validation = validationResult(req);
@@ -47,7 +57,6 @@ const productController = {
             return;
         };
 
-
         try {
             await db.Product.create(nuevoProducto)
             res.render('home', { products });
@@ -56,38 +65,43 @@ const productController = {
             console.log(error);
             res.status(500).send('error');
         }
-
-        // products.push(nuevoProducto);
-        // fs.writeFileSync(productspath, JSON.stringify(products));
-        // res.render("home",{products})
     },
 
     editarForm: (req, res) => {
-        let id = req.params.id;
-        let product = products.find(p => p.id == id)
-        res.render("products/editarProducto", { product })
+        let id = + req.params.id;
+        db.Product.findByPk(id, { raw: true })
+            .then(product => {
+                res.render("products/editarProducto", { product })
+            })
+            .catch(error => {
+                console.log(error);
+                res.status(500).send('error');
+            })
+
+
     },
 
     editar: (req, res) => {
-        let id = req.params.id - 1;
-        let product = products.find(p => p.id - 1 == id);
-        let imagen;
-        if (req.file) {
-            imagen = req.file.filename
-        } else {
-            imagen = product.imagen
-        }
-        let productoEditado = {
-            id: req.params.id,
+        let id = + req.params.id;
+        db.Product.update({
             nombre: req.body.name,
-            descripcion: req.body.description.split(","),
+            descripcion: req.body.description,
             categoria: req.body.category,
             precio: req.body.price,
             descuento: req.body.descuento,
             color: req.body.color,
-            imagen: imagen,
-            delete: false,
-        }
+            imagen: req.file ? req.file.filename : 'Productonoimg.png',
+        },
+            {
+                where: { id: id }
+            })
+            .then(product => {
+                res.render('home', { products });
+            })
+            .catch(error => {
+                console.log(error);
+                res.status(500).send('error');
+            })
 
         const validationEdit = validationResult(req);
 
@@ -98,12 +112,6 @@ const productController = {
             })
             return;
         };
-
-
-
-        products.splice(id, 1, productoEditado);
-        fs.writeFileSync(productspath, JSON.stringify(products));
-        res.render("home", { products })
     },
 
     eliminar: (req, res) => {
