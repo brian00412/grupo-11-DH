@@ -18,6 +18,7 @@
             <div>
                 <label for="name">Nombre: </label>
                 <input type="text" name="name" id="name" ><br>
+                <span class="warning" id="nameWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.name ) { %>
                     
                     <%= errors.name.msg %>
@@ -27,6 +28,7 @@
             <div>
                 <label for="description">Descripción: </label>
                 <input type="text" name="description" id="description" ><br>
+                <span class="warning" id="descriptionWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.description ) { %>
                     
                     <%= errors.description.msg %>
@@ -36,6 +38,7 @@
             <div>
                 <label for="category">Categoria: </label>
                 <input type="text" name="category" id="category" ><br>
+                <span class="warning" id="categoryWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.category ) { %>
                     
                     <%= errors.category.msg %>
@@ -45,6 +48,7 @@
             <div>
                 <label for="price">Precio: </label>
                 <input type="number" name="price" id="price" ><br>
+                <span class="warning" id="priceWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.price ) { %>
                     
                     <%= errors.price.msg %>
@@ -54,6 +58,7 @@
             <div>
                 <label for="descuento">Descuento: </label>
                 <input type="number" name="descuento" id="descuento" ><br>
+                <span class="warning" id="descuentoWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.descuento ) { %>
                     
                     <%= errors.descuento.msg %>
@@ -63,6 +68,7 @@
             <div>
                 <label for="color">Color: </label>
                 <input type="text" name="color" id="color" ><br>
+                <span class="warning" id="colorWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.color ) { %>
                     
                     <%= errors.color.msg %>
@@ -72,6 +78,7 @@
             <div>
                 <label for="image">imagen: </label>
                 <input type="file" name="image" id="image">
+                <span class="warning" id="imageWarning"></span>
                 <% if (typeof errors !=='undefined' && errors.imagen ) { %>
                     
                     <%= errors.imagen.msg %>
@@ -80,9 +87,13 @@
             </div>
             <article class="botonEnviar">
                 <button class="enviar" type="submit">Enviar</button>
+               
             </article>
             <!-- <p><a class="editar" href="/editarProducto">Editar un producto</a></p> -->
+         
+        
         </form>
+        <script src="validation/productvalidations.js"></script>
     </main>
 
     <%- include("../partials/footer") %>

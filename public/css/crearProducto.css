@@ -20,6 +20,21 @@
     width: 90%;
     margin: auto;
     margin-top: 8px;
+
+}
+.warning{
+    width: 200px;
+    text-align: center;
+    
+    color: black;
+    padding-top: 20px;
+}
+.parrafoProducto{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: black;
+    padding-top: 20px;
 }
 
 .crearP div input {

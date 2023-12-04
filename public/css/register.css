@@ -112,6 +112,13 @@ header {
 .tamañocr{
     width: 5px;
 }
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: black;
+    padding-top: 20px;
+}
 
 .form-container {
     max-width: 500px;
