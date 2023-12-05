@@ -4,8 +4,9 @@ const bcrypt = require("bcryptjs")
 const userspath = path.join(__dirname, "../data/users.json")
 const users = JSON.parse(fs.readFileSync(userspath))
 
-const productspath = path.join(__dirname, "../data/productos.json");
-const products = JSON.parse(fs.readFileSync(productspath));
+// const productspath = path.join(__dirname, "../data/productos.json");
+// const products = JSON.parse(fs.readFileSync(productspath));
+const db = require('../../database/models');
 
 
 const getProducts = (req, res) => {
@@ -14,7 +15,10 @@ const getProducts = (req, res) => {
 
 
 const homecontroller= (req, res) => {
-   res.render('home',{products})
+    db.Product.findAll()
+    .then(function(products){
+         res.render('home',{products})
+    } )
 }
 
 const productCartcontroller= (req, res) => {

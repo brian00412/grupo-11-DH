@@ -83,35 +83,42 @@ const productController = {
 
     editar: (req, res) => {
         let id = + req.params.id;
-        db.Product.update({
-            nombre: req.body.name,
-            descripcion: req.body.description,
-            categoria: req.body.category,
-            precio: req.body.price,
-            descuento: req.body.descuento,
-            color: req.body.color,
-            imagen: req.file ? req.file.filename : 'Productonoimg.png',
-        },
-            {
-                where: { id: id }
-            })
-            .then(product => {
-                res.render('home', { products });
-            })
-            .catch(error => {
-                console.log(error);
-                res.status(500).send('error');
-            })
 
         const validationEdit = validationResult(req);
 
         if (!validationEdit.isEmpty()) {
-            console.log(validationEdit.mapped())
-            res.render('products/editarProducto', {
-                errors: validationEdit.mapped()
-            })
-            return;
-        };
+            db.Product.findByPk(id, { raw: true })
+                .then(function (product) {
+                    return res.render('products/editarProducto', {
+                        errors: validationEdit.mapped(),
+                        product: product
+                    })
+                })
+
+        } else {
+
+
+            db.Product.update({
+                nombre: req.body.name,
+                descripcion: req.body.description,
+                categoria: req.body.category,
+                precio: req.body.price,
+                descuento: req.body.descuento,
+                color: req.body.color,
+                imagen: req.file ? req.file.filename : 'Productonoimg.png',
+            },
+                {
+                    where: { id: id }
+                })
+                .then(product => {
+                    res.redirect('/');
+                })
+                .catch(error => {
+                    console.log(error);
+                    res.status(500).send('error');
+                })
+
+        }
     },
 
     eliminar: (req, res) => {

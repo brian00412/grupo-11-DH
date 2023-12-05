@@ -101,7 +101,7 @@ const usersController = {
             res.render ('login',{
                 errors : validationuser.mapped()})
             return;};
-////       terminar usuario 
+////       terminar usuario
         for (let i = 0; i < datouser.length; i++) {
             if (datouser[i].email === gmail) {
             } if (comparedatouser[i].password === contra) {
@@ -111,12 +111,12 @@ const usersController = {
                 
             
         }
-        // if (userperfil){
-        //     res.redirect("home");
-        // }
-        // else{
-        //     res.send("el usurio no existe")
-        // }
+        if (userperfil){
+            res.redirect("home");
+        }
+        else{
+            res.send("el usurio no existe")
+        }
     }
 
 
