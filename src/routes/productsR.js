@@ -24,10 +24,15 @@ const storage = multer.diskStorage({
     }
 })
 
+
 const upload = multer({ storage: storage})
 
+
+routerProduct.get('/prodt', productController.datosProds);
 routerProduct.get('/products', productController.listado);
 routerProduct.get("/productDetail/:id", productController.detalles);
+
+
 
 routerProduct.get("/crearProduct", productController.crear);
 routerProduct.post("/crearProduct",upload.single("image"),validacionesCreateProduc, productController.create);

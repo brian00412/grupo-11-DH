@@ -9,6 +9,7 @@ const products = JSON.parse(fs.readFileSync(productspath));
 const db = require('../../database/models');
 const { validationResult } = require('express-validator');
 const { raw } = require('mysql2');
+const { url } = require('inspector');
 
 
 const usersController = {
@@ -81,8 +82,10 @@ const usersController = {
         };
         ////       terminar usuario
         db.User.findAll({ raw: true })
+
             .then((User) => {
-                User.forEach((usuarios) => { console.log(usuarios)
+                User.forEach((usuarios) => {
+                    console.log(usuarios)
                     if (usuarios.email == gmail) {
                         const comprador = bcrypt.compareSync(contra, usuarios.password)
                         if (comprador == true) {
@@ -90,7 +93,7 @@ const usersController = {
                         }
                     }
                 })
-                console.log (userperfil)
+                console.log(userperfil)
                 if (userperfil) {
                     res.redirect("/");
                 }
@@ -98,14 +101,36 @@ const usersController = {
                     res.send("el usurio no existe")
                 }
             });
+    },
+
+
+    datosUser: async (req, res) => {
+        const Users = await db.User.findAll({ raw: true })
+
+        const response = {
+            meta: {
+                status: 200,
+                total: Users.length,
+                url: '/users'
+            },
+            data: Users
+        }
+        return res.status(200).json(response)
     }
 }
+
 
 
 
 // let user =  User.findOne({
 //     where: {email:req.body.email}
 // })
+
+
+
+
+
+
 
 
 

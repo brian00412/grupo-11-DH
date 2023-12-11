@@ -127,6 +127,20 @@ const productController = {
         product.delete = true;
         fs.writeFileSync(productspath, JSON.stringify(products));
         res.render("home", { products })
+    },
+
+    datosProds: async (req, res) => {
+        const Product = await db.Product.findAll({ raw: true })
+
+        const response = {
+            meta: {
+                status: 200,
+                total: Product.length,
+                url: '/prodt'
+            },
+            data: Product
+        }
+        return res.status(200).json(response)
     }
 
 }
