@@ -36,7 +36,6 @@ const productController = {
     },
 
     create: async (req, res) => {
-        console.log(req.file);
         let nuevoProducto = {
             nombre: req.body.name,
             descripcion: req.body.description,
@@ -59,7 +58,7 @@ const productController = {
 
         try {
             await db.Product.create(nuevoProducto)
-            res.render('home', { products });
+            res.redirect('/');
             console.log('llego el dato')
         } catch (error) {
             console.log(error);
@@ -75,7 +74,7 @@ const productController = {
             })
             .catch(error => {
                 console.log(error);
-                res.status(500).send('error');
+                res.status(500).send('error');c
             })
 
 
@@ -83,12 +82,14 @@ const productController = {
 
     editar: (req, res) => {
         let id = + req.params.id;
+        let imgProduct;
 
         const validationEdit = validationResult(req);
 
         if (!validationEdit.isEmpty()) {
             db.Product.findByPk(id, { raw: true })
                 .then(function (product) {
+                    imgProduct = product.imagen
                     return res.render('products/editarProducto', {
                         errors: validationEdit.mapped(),
                         product: product
@@ -105,7 +106,7 @@ const productController = {
                 precio: req.body.price,
                 descuento: req.body.descuento,
                 color: req.body.color,
-                imagen: req.file ? req.file.filename : 'Productonoimg.png',
+                imagen: req.file ? req.file.filename : imgProduct,
             },
                 {
                     where: { id: id }
@@ -123,6 +124,7 @@ const productController = {
 
     eliminar: (req, res) => {
         let id = req.params.id;
+<<<<<<< HEAD
         let product = products.find(p => p.id == id);
         product.delete = true;
         fs.writeFileSync(productspath, JSON.stringify(products));
@@ -141,6 +143,19 @@ const productController = {
             data: Product
         }
         return res.status(200).json(response)
+=======
+        db.Product.destroy(
+            {
+                where: { id: id }
+            }
+        ).then(product => {
+            res.redirect('/')
+        })
+        .catch(error => {
+            console.log(error);
+            res.status(500).send('error');
+        })
+>>>>>>> 6d0481ded5c89a1a2748f010490e87d10c523c26
     }
 
 }
