@@ -4,8 +4,8 @@ const bcrypt = require("bcryptjs")
 // const compare = require("bcrypt")
 // const userspath = path.join(__dirname, "../data/users.json")
 // const users = JSON.parse(fs.readFileSync(userspath))
-const productspath = path.join(__dirname, "../data/productos.json");
-const products = JSON.parse(fs.readFileSync(productspath));
+// const productspath = path.join(__dirname, "../data/productos.json");
+// const products = JSON.parse(fs.readFileSync(productspath));
 const db = require('../../database/models');
 const { validationResult } = require('express-validator');
 const { raw } = require('mysql2');
@@ -50,15 +50,11 @@ const usersController = {
         try {
             await db.User.create(newUser)
             console.log();
-            res.render('home', { products });
+            res.redirect("/");
         } catch (error) {
             console.log(error);
             res.status(500).send('error');
         }
-        // console.log(newUser);
-        // users.push(newUser);
-        // fs.writeFileSync(userspath, JSON.stringify(users));
-        // res.render("home", { products })
 
     },
     // Login controller

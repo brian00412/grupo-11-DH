@@ -74,7 +74,7 @@ const productController = {
             })
             .catch(error => {
                 console.log(error);
-                res.status(500).send('error');c
+                res.status(500).send('error');
             })
 
 
@@ -124,11 +124,17 @@ const productController = {
 
     eliminar: (req, res) => {
         let id = req.params.id;
-<<<<<<< HEAD
-        let product = products.find(p => p.id == id);
-        product.delete = true;
-        fs.writeFileSync(productspath, JSON.stringify(products));
-        res.render("home", { products })
+        db.Product.destroy(
+            {
+                where: { id: id }
+            }
+        ).then(product => {
+            res.redirect('/')
+        })
+        .catch(error => {
+            console.log(error);
+            res.status(500).send('error');
+        })
     },
 
     datosProds: async (req, res) => {
@@ -143,19 +149,10 @@ const productController = {
             data: Product
         }
         return res.status(200).json(response)
-=======
-        db.Product.destroy(
-            {
-                where: { id: id }
-            }
-        ).then(product => {
-            res.redirect('/')
-        })
-        .catch(error => {
-            console.log(error);
-            res.status(500).send('error');
-        })
->>>>>>> 6d0481ded5c89a1a2748f010490e87d10c523c26
+
+
+
+
     }
 
 }
