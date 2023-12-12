@@ -58,7 +58,7 @@ const productController = {
 
         try {
             await db.Product.create(nuevoProducto)
-            res.redirect('/');
+            res.redirect('/products');
             console.log('llego el dato')
         } catch (error) {
             console.log(error);
@@ -129,7 +129,7 @@ const productController = {
                 where: { id: id }
             }
         ).then(product => {
-            res.redirect('/')
+            res.redirect('/products')
         })
         .catch(error => {
             console.log(error);

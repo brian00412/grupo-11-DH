@@ -35,16 +35,15 @@
     <div class="forma-cart">
 
         <% productos.forEach(product=> { %>
-            <% if(product.delete==false ){ %>
 
-       <div class="container">
+       <div class="container" whith: 1px>
            <nav>
                 <i class="fa-solid fa-cart-shopping">
                     <div class="buy-card">
                           <ul class="nav-card">
-                              <li><img src="/images/productos/<%= product.imagen %>" alt=""></li>
-                              <li><%= product.nombre %></li>
-                              <li><%= product.precio %></li>
+                              <li><img src="/images/productos/<%= product.imagen %>" alt="" width="20%"></li>
+                              <li><%= productos.nombre %></li>
+                              <li><%= productos.precio %></li>
                               <li>Cantidad 
                                <input class="marcador-cantidad" type="number" id="campoNumero" size="4">
                              </li>
@@ -55,7 +54,6 @@
                    </i>
            </nav>
           </div>  
-          <% } %>
 
 
           <% }); %>

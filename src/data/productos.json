@@ -1,1 +1,127 @@
-[{"id":1,"nombre":"Monitor Gigabyte","descripcion":["Tamaño del panel (diagonal): 27 IPS"," Colores de visualización: 8 bits","Tiempo de respuesta: 1ms","Frecuencia de actualización: 144Hz","Conectividad: HDMI 1.4 x2 Display port 1.2 x1","HDR: N / A","Sin destellos: Sí","Voltaje: 19 VCC 3,42 A"],"categoria":"Oferta","precio":75000,"descuento":10,"color":"Negro","imagen":"monitor gigabyte.png","delete":true},{"id":"2","nombre":"   Teclado Mecanico","descripcion":["   Dimensión: 360 * 130 * 35 mm","Peso: 700g","Teclas: 88PCS","Material: Placa de acero y plástico ABS reforzado","Efecto de luz RGB","50 millones de pulsaciones de teclas","Distrubución: Español","Color: Negro"],"categoria":"   Oferta","precio":"   45000","descuento":"   20","color":"   Negro","imagen":"tecladoMecanico.png","delete":false},{"id":"3","nombre":" RX 6900 XT","descripcion":[" Procesamiento de gráficos: AMD Radeon 6900 XT","Reloj del núcleo: 2015 MHz","Tamaño de la memoria: 16 GB","Tipo de memoria: GDDR6","Bus de tarjeta: PCI-E 4.0 x 16","Dimensiones: 26","7 cm x 12 cm x 4","9 cm","Tipo de memoria: GDDR6","Fuente de alimentación recomendada: 850W"],"categoria":" Oferta","precio":" 3800000","descuento":" 10","color":" Negro","imagen":"rx6700xt.jpg","delete":false},{"id":4,"nombre":"  Volante Logitech","descripcion":["  ESPECIFICACIONES FÍSICAS DEL VOLANTE","Altura: 270 mm","Anchura: 260 mm","Peso sin cables: 2","25 kg","ESPECIFICACIONES FÍSICAS DE LOS PEDALES","Altura: 167 mm","Anchura: 428","5 mm","Profundidad: 311 mm"],"categoria":"  Oferta","precio":"  140000","descuento":"  10","color":"  Negro","imagen":"volanteLogitech.png","delete":false},{"id":"5","nombre":"       Notebook Rog Zephyrus Duo","descripcion":["       Marca: ASUS","Nombre del modelo: ROG Zephyrus Dúo 16 (2022)","Tamaño de pantalla:40","64 centímetros","Coprocesador de gráficos: NVIDIA GeForce RTX 3060","Velocidad de la CPU: 4","7 GHz","Tamaño del disco duro: 2 TB","Sistema operativo: Inicio de Windows 11","Procesador: AMD Ryzen 7 6800H"],"categoria":"       Oferta","precio":"       2553499","descuento":"       15","color":"       Negro","imagen":"rogZephyrusDuo.png","delete":true},{"id":6,"nombre":"logitech G502","descripcion":["Tipo de mouse: De juego","Con cable: si","Resolución del sensor: 16000 dpi","Interfaces: USB","Con luces: Sí","Con rueda de desplazamiento: Sí","Con Bluetooth: No"],"categoria":"Oferta","precio":60000,"descuento":20,"color":"Negro","imagen":"logitechg502.png","delete":false}]
+[
+    {
+        "id": 1,
+        "nombre": "Monitor Gigabyte",
+        "descripcion": [
+            "Tamaño del panel (diagonal): 27 IPS",
+            " Colores de visualización: 8 bits",
+            "Tiempo de respuesta: 1ms",
+            "Frecuencia de actualización: 144Hz",
+            "Conectividad: HDMI 1.4 x2 Display port 1.2 x1",
+            "HDR: N / A",
+            "Sin destellos: Sí",
+            "Voltaje: 19 VCC 3,42 A"
+        ],
+        "categoria": "Oferta",
+        "precio": 75000,
+        "descuento": 10,
+        "color": "Negro",
+        "imagen": "monitor gigabyte.png",
+        "delete": true
+    },
+    {
+        "id": "2",
+        "nombre": "   Teclado Mecanico",
+        "descripcion": [
+            "   Dimensión: 360 * 130 * 35 mm",
+            "Peso: 700g",
+            "Teclas: 88PCS",
+            "Material: Placa de acero y plástico ABS reforzado",
+            "Efecto de luz RGB",
+            "50 millones de pulsaciones de teclas",
+            "Distrubución: Español",
+            "Color: Negro"
+        ],
+        "categoria": "   Oferta",
+        "precio": "   45000",
+        "descuento": "   20",
+        "color": "   Negro",
+        "imagen": "tecladoMecanico.png",
+        "delete": false
+    },
+    {
+        "id": "3",
+        "nombre": " RX 6900 XT",
+        "descripcion": [
+            " Procesamiento de gráficos: AMD Radeon 6900 XT",
+            "Reloj del núcleo: 2015 MHz",
+            "Tamaño de la memoria: 16 GB",
+            "Tipo de memoria: GDDR6",
+            "Bus de tarjeta: PCI-E 4.0 x 16",
+            "Dimensiones: 26",
+            "7 cm x 12 cm x 4",
+            "9 cm",
+            "Tipo de memoria: GDDR6",
+            "Fuente de alimentación recomendada: 850W"
+        ],
+        "categoria": " Oferta",
+        "precio": " 3800000",
+        "descuento": " 10",
+        "color": " Negro",
+        "imagen": "rx6700xt.jpg",
+        "delete": false
+    },
+    {
+        "id": 4,
+        "nombre": "  Volante Logitech",
+        "descripcion": [
+            "  ESPECIFICACIONES FÍSICAS DEL VOLANTE",
+            "Altura: 270 mm",
+            "Anchura: 260 mm",
+            "Peso sin cables: 2",
+            "25 kg",
+            "ESPECIFICACIONES FÍSICAS DE LOS PEDALES",
+            "Altura: 167 mm",
+            "Anchura: 428",
+            "5 mm",
+            "Profundidad: 311 mm"
+        ],
+        "categoria": "  Oferta",
+        "precio": "  140000",
+        "descuento": "  10",
+        "color": "  Negro",
+        "imagen": "volanteLogitech.png",
+        "delete": false
+    },
+    {
+        "id": "5",
+        "nombre": "       Notebook Rog Zephyrus Duo",
+        "descripcion": [
+            "       Marca: ASUS",
+            "Nombre del modelo: ROG Zephyrus Dúo 16 (2022)",
+            "Tamaño de pantalla:40",
+            "64 centímetros",
+            "Coprocesador de gráficos: NVIDIA GeForce RTX 3060",
+            "Velocidad de la CPU: 4",
+            "7 GHz",
+            "Tamaño del disco duro: 2 TB",
+            "Sistema operativo: Inicio de Windows 11",
+            "Procesador: AMD Ryzen 7 6800H"
+        ],
+        "categoria": "       Oferta",
+        "precio": "       2553499",
+        "descuento": "       15",
+        "color": "       Negro",
+        "imagen": "rogZephyrusDuo.png",
+        "delete": true
+    },
+    {
+        "id": 6,
+        "nombre": "logitech G502",
+        "descripcion": [
+            "Tipo de mouse: De juego",
+            "Con cable: si",
+            "Resolución del sensor: 16000 dpi",
+            "Interfaces: USB",
+            "Con luces: Sí",
+            "Con rueda de desplazamiento: Sí",
+            "Con Bluetooth: No"
+        ],
+        "categoria": "Oferta",
+        "precio": 60000,
+        "descuento": 20,
+        "color": "Negro",
+        "imagen": "logitechg502.png",
+        "delete": false
+    }
+]
