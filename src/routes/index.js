@@ -10,8 +10,8 @@ const router = express.Router();
 
 router.get('/', homecontroller);
 
-router.get('/productCart', carrito, );
-router.post("/productCart/:id", carrito);
+router.get('/productCart', carrito.ver );
+router.post("/productCart/:id", carrito.agregar);
 router.get('/myPerfil',perfilesController);
 
 

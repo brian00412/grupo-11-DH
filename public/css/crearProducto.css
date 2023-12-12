@@ -22,14 +22,16 @@
     margin-top: 8px;
 
 }
-.warning{
-    width: 200px;
+
+.warning {
+    width: 300px;
     text-align: center;
-    
+
     color: black;
     padding-top: 20px;
 }
-.parrafoProducto{
+
+.parrafoProducto {
     width: 200px;
     text-align: center;
     margin: auto;
@@ -41,6 +43,7 @@
     width: 100%;
     border: 0;
 }
+
 .botonEnviar {
     display: flex;
     justify-content: center;
@@ -48,6 +51,7 @@
     width: 90%;
     margin: auto;
 }
+
 .enviar,
 .reset {
     background-color: white;
@@ -55,22 +59,26 @@
     padding: 4px;
     border-radius: 8px;
 }
- .editar {
+
+.editar {
     text-decoration: none;
     color: #000;
     position: relative;
     left: 10px;
- }
+}
+
 @media (min-width: 361px) {
     .crearP {
         width: 70%;
     }
+
     .crearP div {
         display: flex;
         flex-wrap: wrap;
         justify-content: end;
-        margin-right: 20% ;
+        margin-right: 20%;
     }
+
     .crearP div input {
         width: 50%;
         padding: 5px;
@@ -80,17 +88,20 @@
 @media (min-width: 769px) {
     .crearP {
         width: 50%;
-        
+
     }
+
     .h3 {
         font-size: 50px;
         padding: 20px;
     }
+
     .crearP div {
         margin-right: 20%;
         font-size: 25px;
         margin-top: 12px;
     }
+
     .enviar {
         font-size: 25px;
     }

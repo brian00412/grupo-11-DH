@@ -38,9 +38,10 @@
                 <div class="descripcion">
                     <h4 class="caracteristicas">Caracteristicas</h4>
                     <ul>
-                        <% for(let i=0; i<product.descripcion.length; i++){%>
+                        <% let descripcion = product.descripcion.split(",") %>
+                        <% for(let i=0; i<descripcion.length; i++){%>
                             <li>
-                                <%=product.descripcion[i] %>
+                                <%=descripcion[i] %>
                             </li>
                             <%}%>
                     </ul>
