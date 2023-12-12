@@ -42,4 +42,6 @@ routerProduct.post("/editarProducto/:id?", upload.single("image"),validacionesCr
 
 routerProduct.post("/eliminarProducto/:id", productController.eliminar)
 
+routerProduct.post("/buscar", productController.buscardor)
+
 module.exports = routerProduct;

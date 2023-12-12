@@ -139,6 +139,12 @@ header ul li a {
 
 }
 
+#search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 header .form .input {
     position: relative;
     bottom: 60px;

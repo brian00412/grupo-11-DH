@@ -131,10 +131,26 @@ const productController = {
         ).then(product => {
             res.redirect('/products')
         })
-        .catch(error => {
-            console.log(error);
-            res.status(500).send('error');
+            .catch(error => {
+                console.log(error);
+                res.status(500).send('error');
+            })
+    },
+
+    buscardor: (req, res) => {
+        let name = req.body.buscar
+        db.Product.findAll({
+            raw: true,
+            where: { nombre: { [db.Sequelize.Op.like]: `%${name}%` } }
         })
+            .then((products) => {
+                res.render("products/products", { products })
+            })
+            .catch(error => {
+                console.log(name)
+                console.log(error);
+                res.status(500).send('error');
+            })
     },
 
     datosProds: async (req, res) => {
@@ -149,10 +165,6 @@ const productController = {
             data: Product
         }
         return res.status(200).json(response)
-
-
-
-
     }
 
 }
