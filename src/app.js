@@ -6,6 +6,13 @@ const app = express();
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+const cors = require('cors');
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 
 app.set("view engine", "ejs");
 app.set("views", "src/views");

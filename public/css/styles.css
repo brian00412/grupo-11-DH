@@ -218,7 +218,7 @@ main {
 
 
 .articulo {
-    
+
     position: relative;
     height: auto;
     text-align: center;
@@ -372,24 +372,26 @@ footer {
 
 
 /*******     new produpto   *******/
-.prupto{
+.prupto {
 
-text-align: center;
+    text-align: center;
 
 
 }
+
 .produptos {
     background-color: white;
     border-radius: 15%;
-    height: 230px;
-    width: 240px;
+    height: 280px;
+    width: 250px;
     display: flex;
-   flex-direction: column;
-   border-color: #000; 
-   -webkit-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
-   -moz-box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
-   box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
-   margin-bottom: 20px;
+    border-top: 2px;
+    flex-direction: column;
+    border-color: #000;
+    -webkit-box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 31px 0px rgba(0, 0, 0, 0.75);
+    margin-bottom: 20px;
 }
 
 .produptos a {
@@ -397,26 +399,30 @@ text-align: center;
 }
 
 .imagen-produp {
-    height: 130px;
-    width: 200px;
-    background-size:cover
+    border-bottom: 5 px;
+    height: 170px;
+    width: auto;
+    /* background-size:cover; */
+    object-fit: cover;
 }
 
 .informacion-produpto {
-  align-items: center;
+    align-items: center;
 }
 
-.precion-produp{
- color: #000;
+.precion-produp {
+    color: #000;
 
 }
-.descueto-produp{
- color: #4CAF50;
- font-size: 19px;
+
+.descueto-produp {
+    color: #4CAF50;
+    font-size: 19px;
 }
-.nombre-produp{
-color: #000;
-font-size: 20px;
+
+.nombre-produp {
+    color: #000;
+    font-size: 20px;
 }
 
 .forma {
@@ -424,6 +430,6 @@ font-size: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 30px;
-    
-    
+
+
 }
