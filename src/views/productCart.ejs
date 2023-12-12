@@ -41,9 +41,11 @@
                 <i class="fa-solid fa-cart-shopping">
                     <div class="buy-card">
                           <ul class="nav-card">
-                              <li><img src="/images/productos/<%= product.imagen %>" alt="" width="20%"></li>
-                              <li><%= productos.nombre %></li>
-                              <li><%= productos.precio %></li>
+                              <li><img src="/images/productos/<%= product.imagen %>" alt="" width="200px"></li>
+                              <li><%= product.nombre %></li>
+                              <li><%let total=new Intl.NumberFormat().format(product.precio - (product.precio /100 *
+                                product.descuento)) %> 
+                                $<%= total %></li>
                               <li>Cantidad 
                                <input class="marcador-cantidad" type="number" id="campoNumero" size="4">
                              </li>
