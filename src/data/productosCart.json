@@ -1,14 +1,1 @@
-
-[
-    {
-        "id": 18,
-        "nombre": "Rog Zephyrus Duo",
-        "descripcion": "Marca: ASUS,Nombre del modelo: ROG Zephyrus Dúo 16 (2022),Tamaño de pantalla:40,64 centímetros,Coprocesador de gráficos: NVIDIA GeForce RTX 3060,Velocidad de la CPU: 4,7 GHz,Tamaño del disco duro: 2 TB,Sistema operativo: Inicio de Windows 11,Procesador: AMD Ryzen 7 6800H",
-        "categoria": "Oferta",
-        "precio": "2553499",
-        "descuento": "25",
-        "color": "Negro",
-        "imagen": "image-1702344968806.png"
-    }
-]
-
+[{"id":7,"nombre":"Monitor Gamer Samsung LF24T350","descripcion":"Monitor 24 pulgadas. Monitor Gamer Samsung.  Conectá tus dispositivos Mediante su entrada PC In podrás conectar tu PC o Notebook. Además, también ofrece la posibilidad de conectarse a través de HDMI. El LED no tiene sistema de audio incorporado.","categoria":"gamer","precio":"146000","descuento":"10","color":"negro","imagen":"image-1702327964817.jpg"}]

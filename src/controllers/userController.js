@@ -50,7 +50,7 @@ const usersController = {
         try {
             await db.User.create(newUser)
             console.log();
-            res.redirect("/");
+            res.redirect("/login");
         } catch (error) {
             console.log(error);
             res.status(500).send('error');
