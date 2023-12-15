@@ -326,7 +326,8 @@ footer {
 
 /*************** ProducCart ***************/
 .container {
-    width: 50%;
+    width: auto;
+    height: 70%;
     margin: auto;
     max-height: 100%;
     position: relative;
