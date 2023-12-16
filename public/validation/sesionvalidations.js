@@ -13,10 +13,8 @@ window.onload = function () {
         let warnings = "";
         let entrar = false;
 
-        let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,2})+$/;
-
         // Validar el email
-        if (!regexEmail.test(email.value)) {
+        if (!isValidEmail(email.value)) {
             warnings += 'El email no es válido.<br>';
             entrar = true;
         }
@@ -30,6 +28,16 @@ window.onload = function () {
         // Mostrar advertencias si es necesario
         if (entrar) {
             parrafo.innerHTML = warnings;
+        } else {
+            form.submit();
         }
+
     });
+
+   
+    function isValidEmail(emailValue) {
+        
+        return emailValue && emailValue.includes('@') && emailValue.split('@')[1]?.includes('.');
+    }
+
 };
