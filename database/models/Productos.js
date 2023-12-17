@@ -1,3 +1,5 @@
+const generos = require('../models/categoria')
+
 
 module.exports = function (sequelize, DataTypes) {
 
@@ -33,8 +35,15 @@ module.exports = function (sequelize, DataTypes) {
         tableName: 'producto',
         timestamps: false,
     }
-    
-    const product = sequelize.define('Product',rows,config);
+
+    const product = sequelize.define('Product', rows, config);
+    // Agregar asociaciones a la tabla de Products
+    generos.associate = function (models) {
+        product.belongsTo(generos, {
+            foreignKey: 'generoID',
+            as: 'generos'
+          });
+    }
 
     return product;
 }
