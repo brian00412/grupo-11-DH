@@ -1,6 +1,3 @@
-const generos = require('../models/categoria')
-
-
 module.exports = function (sequelize, DataTypes) {
 
     const rows = {
@@ -14,9 +11,10 @@ module.exports = function (sequelize, DataTypes) {
         descripcion: {
             type: DataTypes.TEXT,
         },
-        categoria: {
-            type: DataTypes.STRING,
-        },
+        categoria_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true,
+        },  
         precio: {
             type: DataTypes.INTEGER,
         },
@@ -28,22 +26,22 @@ module.exports = function (sequelize, DataTypes) {
         },
         imagen: {
             type: DataTypes.STRING,
-
         }
+        
     }
     const config = {
         tableName: 'producto',
         timestamps: false,
     }
 
-    const product = sequelize.define('Product', rows, config);
-    // Agregar asociaciones a la tabla de Products
-    generos.associate = function (models) {
-        product.belongsTo(generos, {
-            foreignKey: 'generoID',
-            as: 'generos'
-          });
+    const Product = sequelize.define('Product', rows, config);
+
+    Product.associate = function (models) {
+        Product.belongsTo(models.Categoria, {
+            foreignKey: 'categoria_id',
+            as: 'categoria'
+        });
     }
 
-    return product;
+    return Product;
 }

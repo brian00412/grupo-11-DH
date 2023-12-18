@@ -1,4 +1,3 @@
-const generos = require('../models/Productos')
 module.exports = function (sequelize, DataTypes) {
 
     const rows = {
@@ -6,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        categoriID: {
+        categoria: {
             type: DataTypes.STRING,
         },
     }
@@ -14,14 +13,14 @@ module.exports = function (sequelize, DataTypes) {
         tableName: 'categoria',
         timestamps: false,
     }
-    
-    const Categoria = sequelize.define('Categoria',rows,config);
 
-    generos.associate = function (models) {
-        product.belongsTo(generos, {
-            foreignKey: 'generoID',
-            as: 'generos'
-          });
-}
+    const Categoria = sequelize.define('Categoria', rows, config);
+
+    Categoria.associate = function (models) {
+        Categoria.hasMany(models.Product, {
+            foreignKey: 'categoria_id',
+            as: 'productos'
+        });
+    }
     return Categoria;
 }

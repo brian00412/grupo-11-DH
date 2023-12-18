@@ -9,7 +9,10 @@ const { raw } = require('mysql2');
 
 const productController = {
     listado: (req, res) => {
-        db.Product.findAll({ raw: true })
+        db.Product.findAll({
+            raw: true,
+            include: [{ association: "categoria" }]
+        })
             .then((products) => {
                 return res.render("products/products", { products })
             })
@@ -21,8 +24,12 @@ const productController = {
 
     detalles: (req, res) => {
         let id = req.params.id;
-        db.Product.findByPk(id, { raw: true })
+        db.Product.findByPk(id, {
+            raw: true,
+            include: [{ association: "categoria" }]
+        })
             .then(product => {
+                console.log(product.categoria)
                 res.render("products/productDetail", { product });
             })
             .catch(error => {
@@ -39,7 +46,7 @@ const productController = {
         let nuevoProducto = {
             nombre: req.body.name,
             descripcion: req.body.description,
-            categoria: req.body.category,
+            categoria_id: req.body.category,
             precio: req.body.price,
             descuento: req.body.descuento,
             color: req.body.color,
@@ -68,7 +75,10 @@ const productController = {
 
     editarForm: (req, res) => {
         let id = + req.params.id;
-        db.Product.findByPk(id, { raw: true })
+        db.Product.findByPk(id, {
+            raw: true,
+            include: [{ association: "categoria" }]
+        })
             .then(product => {
                 res.render("products/editarProducto", { product })
             })
@@ -102,7 +112,7 @@ const productController = {
             db.Product.update({
                 nombre: req.body.name,
                 descripcion: req.body.description,
-                categoria: req.body.category,
+                categoria_id: req.body.category,
                 precio: req.body.price,
                 descuento: req.body.descuento,
                 color: req.body.color,
@@ -112,7 +122,7 @@ const productController = {
                     where: { id: id }
                 })
                 .then(product => {
-                    res.redirect('/');
+                    res.redirect('/products');
                 })
                 .catch(error => {
                     console.log(error);

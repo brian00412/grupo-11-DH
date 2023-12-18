@@ -15,7 +15,9 @@ const getProducts = (req, res) => {
 
 
 const homecontroller= (req, res) => {
-    db.Product.findAll()
+    db.Product.findAll({
+        include: [{association: "categoria"}]
+    })
     .then(function(products){
          res.render('home',{products})
     } )
