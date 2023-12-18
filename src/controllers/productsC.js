@@ -164,18 +164,59 @@ const productController = {
     },
 
     datosProds: async (req, res) => {
-        const Product = await db.Product.findAll({ raw: true })
+        const Product = await db.Product.findAll({
+            // raw: true,
+            include: [{ association: "categoria" }]
+        })
+        let data = []
+        Product.forEach(product => {
+            const producto = {
+                id: product.id,
+                nombre: product.nombre,
+                descripcion: product.descripcion.split(","),
+                categoria: product.categoria.categoria,
+                detalle: `http://localhost:8001/api/products/${product.id}`
+            }
+            data.push(producto)
+        })
 
         const response = {
             meta: {
                 status: 200,
                 total: Product.length,
-                url: '/prodt'
+                totalPorCategoria: {
+                    Electrodomesticos: Product.filter(producto => { return producto.categoria_id == 1 }).length,
+                    Gamer: Product.filter(producto => { return producto.categoria_id == 2 }).length
+                }
             },
-            data: Product
+            data: data
         }
         return res.status(200).json(response)
-    }
+    },
+    detail: async (req, res) => {
+        let id = req.params.id;
+        let product = await db.Product.findByPk(id, {
+            include: [{ association: "categoria" }]
+        })
+        const producto = {
+            id: product.id,
+            nombre: product.nombre,
+            descripcion: product.descripcion.split(","),
+            categoria: product.categoria.categoria,
+            precio: product.precio,
+            descuento: product.descuento,
+            color: product.color,
+            imagen: product.imagen
+        }
+
+        const response = {
+            producto: producto,
+            categoria: product.categoria,
+            URL: `http://localhost:8001/images/productos/${product.imagen}`
+        }
+
+        return res.status(200).json(response)
+    },
 
 }
 
