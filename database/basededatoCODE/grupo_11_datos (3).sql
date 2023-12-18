@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2023 a las 22:04:10
+-- Tiempo de generación: 18-12-2023 a las 07:02:15
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `Id` int(11) NOT NULL,
-  `CategoriID` text NOT NULL
+  `categoria` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`Id`, `CategoriID`) VALUES
-(1, 'electredomestico'),
+INSERT INTO `categoria` (`Id`, `categoria`) VALUES
+(1, 'Electrodoméstico'),
 (2, 'Gamer');
 
 -- --------------------------------------------------------
@@ -50,30 +50,30 @@ CREATE TABLE `producto` (
   `id` int(10) UNSIGNED NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
-  `categoria` varchar(20) NOT NULL,
   `precio` mediumtext NOT NULL,
   `descuento` varchar(100) NOT NULL,
   `color` varchar(20) NOT NULL,
-  `imagen` varchar(200) NOT NULL
+  `imagen` varchar(200) NOT NULL,
+  `categoria_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `categoria`, `precio`, `descuento`, `color`, `imagen`) VALUES
-(1, 'Monitor Gigabyte 27 pulgada', '  Tamaño del panel (diagonal): 27 IPS,Colores de visualización: 8 bits,Tiempo de respuesta: 1ms,Frecuencia de actualización: 144Hz,Conectividad: HDMI 1.4 x2 Display port 1.2 x1,HDR: N / A,Sin destellos: Sí,Voltaje: 19 VCC 3,42 A', ' Gamer', '  75000', '  10', '  Negro', 'image-1702344346379.png'),
-(3, 'PS5 Horizon Forbidden West Sta', ' Horizon Forbidden West arranca seis meses después de los sucesos de Horizon Zero Dawn. La cazadora de máquinas Aloy viaja al oeste para investigar una misteriosa y letal plaga.', 'Electrodomestico', ' 120000', ' 5', ' clasico', 'image-1702325343640.png'),
-(5, 'arvel\'s Spider-Man 2 Spider-ma', 'Con este juego de Spider-Man vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.', 'juegos', '40000', '8', 'clasico', 'image-1702326950683.png'),
-(6, 'MOUSE GAMING USB RGB G203 LOGI', 'Hasta ocho veces más rápido G203 Prodigy puede comunicarse a 1.000 señales por segundo, una velocidad 8 veces superior a la de los mouse estándar. ', 'gamer', '32000', '5', 'negro', 'image-1702327851010.jpg'),
-(7, 'Monitor Gamer Samsung LF24T350', 'Monitor 24 pulgadas. Monitor Gamer Samsung.  Conectá tus dispositivos Mediante su entrada PC In podrás conectar tu PC o Notebook. Además, también ofrece la posibilidad de conectarse a través de HDMI. El LED no tiene sistema de audio incorporado.', 'gamer', '146000', '10', 'negro', 'image-1702327964817.jpg'),
-(9, 'GABINETE SENTEY Z20 TG 4*FAN C', 'gabinete con vidrio frontal y latelar con 4 ventiladores de 120 mm de alto rendimiento, luces y ventiladores controlable a control remoto ', 'gamer', '175000', '10', 'negro', 'image-1702330272437.jpg'),
-(10, 'Procesador Amd Ryzen 5 5600', '  El Ryzen 5 5600 resulta un gran procesador calidad precio. Ofrece un buen rendimiento tanto en videojuegos como en productividad,', '  gamer', ' 400000', '  35', '  negro', 'image-1702331287190.jpeg'),
-(11, 'Placa de Video Gigabyte NVIDIA', ' La GeForce RTX 3070 está impulsada por la arquitectura RTX de 2ª generación de Ampere, NVIDIA. Construido con núcleos RT mejorados y núcleos Tensor, multiprocesadores para streaming y memoria G6 de alta velocidad, te da la potencia que necesitas para arrasar con los juegos más exigentes.', ' gamer', ' 200000', ' 20', ' negro', 'image-1702332110790.png'),
-(16, 'RX 6900 XT', 'Procesamiento de gráficos: AMD Radeon 6900 XT,Reloj del núcleo: 2015 MHz,Tamaño de la memoria: 16 GB,Tipo de memoria: GDDR6,Bus de tarjeta: PCI-E 4.0 x 16,Dimensiones: 26,7 cm x 12 cm x 4,9 cm,Tipo de memoria: GDDR6,Fuente de alimentación recomendada: 850W', 'Gamer', '3800000', '10', 'Negro', 'image-1702344565030.jpg'),
-(17, 'Volante Logitech', 'ESPECIFICACIONES FÍSICAS DEL VOLANTE,Altura: 270 mm,Anchura: 260 mm,Peso sin cables: 2,25 kg,ESPECIFICACIONES FÍSICAS DE LOS PEDALES,Altura: 167 mm,Anchura: 428,5 mm,Profundidad: 311 mm', 'Gamer', '140000', '10', 'Negro', 'image-1702344739769.png'),
-(18, 'Rog Zephyrus Duo', ' Marca: ASUS,Nombre del modelo: ROG Zephyrus Dúo 16 (2022),Tamaño de pantalla:40,64 centímetros,Coprocesador de gráficos: NVIDIA GeForce RTX 3060,Velocidad de la CPU: 4,7 GHz,Tamaño del disco duro: 2 TB,Sistema operativo: Inicio de Windows 11,Procesador: AMD Ryzen 7 6800H', ' Gamer', ' 3000000', ' 30', ' Negro', 'image-1702344968806.png'),
-(19, 'Logitech G502', 'Tipo de mouse: De juego,Con cable: si,Resolución del sensor: 16000 dpi,Interfaces: USB,Con luces: Sí,Con rueda de desplazamiento: Sí,Con Bluetooth: No', 'Gamer', '60000', '15', 'Negro', 'image-1702345151382.png');
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `precio`, `descuento`, `color`, `imagen`, `categoria_id`) VALUES
+(1, 'Monitor Gigabyte 27 pulgada', '  Tamaño del panel (diagonal): 27 IPS,Colores de visualización: 8 bits,Tiempo de respuesta: 1ms,Frecuencia de actualización: 144Hz,Conectividad: HDMI 1.4 x2 Display port 1.2 x1,HDR: N / A,Sin destellos: Sí,Voltaje: 19 VCC 3,42 A', '  75000', '  10', '  Negro', 'image-1702344346379.png', 2),
+(3, 'PS5 Horizon Forbidden West Sta', ' Horizon Forbidden West arranca seis meses después de los sucesos de Horizon Zero Dawn. La cazadora de máquinas Aloy viaja al oeste para investigar una misteriosa y letal plaga.', ' 120000', ' 5', ' clasico', 'image-1702325343640.png', 2),
+(5, 'arvel\'s Spider-Man 2 Spider-ma', 'Con este juego de Spider-Man vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.', '40000', '8', 'clasico', 'image-1702326950683.png', 2),
+(6, 'MOUSE GAMING USB RGB G203 LOGI', 'Hasta ocho veces más rápido G203 Prodigy puede comunicarse a 1.000 señales por segundo, una velocidad 8 veces superior a la de los mouse estándar. ', '32000', '5', 'negro', 'image-1702327851010.jpg', 2),
+(7, 'Monitor Gamer Samsung LF24T350', 'Monitor 24 pulgadas. Monitor Gamer Samsung.  Conectá tus dispositivos Mediante su entrada PC In podrás conectar tu PC o Notebook. Además, también ofrece la posibilidad de conectarse a través de HDMI. El LED no tiene sistema de audio incorporado.', '146000', '10', 'negro', 'image-1702327964817.jpg', 2),
+(9, 'GABINETE SENTEY Z20 TG 4*FAN C', 'gabinete con vidrio frontal y latelar con 4 ventiladores de 120 mm de alto rendimiento, luces y ventiladores controlable a control remoto ', '175000', '10', 'negro', 'image-1702330272437.jpg', 2),
+(10, 'Procesador Amd Ryzen 5 5600', '  El Ryzen 5 5600 resulta un gran procesador calidad precio. Ofrece un buen rendimiento tanto en videojuegos como en productividad,', ' 400000', '  35', '  negro', 'image-1702331287190.jpeg', 2),
+(11, 'Placa de Video Gigabyte NVIDIA', ' La GeForce RTX 3070 está impulsada por la arquitectura RTX de 2ª generación de Ampere, NVIDIA. Construido con núcleos RT mejorados y núcleos Tensor, multiprocesadores para streaming y memoria G6 de alta velocidad, te da la potencia que necesitas para arrasar con los juegos más exigentes.', ' 200000', ' 20', ' negro', 'image-1702332110790.png', 2),
+(16, 'RX 6900 XT', 'Procesamiento de gráficos: AMD Radeon 6900 XT,Reloj del núcleo: 2015 MHz,Tamaño de la memoria: 16 GB,Tipo de memoria: GDDR6,Bus de tarjeta: PCI-E 4.0 x 16,Dimensiones: 26,7 cm x 12 cm x 4,9 cm,Tipo de memoria: GDDR6,Fuente de alimentación recomendada: 850W', '3800000', '10', 'Negro', 'image-1702344565030.jpg', 2),
+(17, 'Volante Logitech', 'ESPECIFICACIONES FÍSICAS DEL VOLANTE,Altura: 270 mm,Anchura: 260 mm,Peso sin cables: 2,25 kg,ESPECIFICACIONES FÍSICAS DE LOS PEDALES,Altura: 167 mm,Anchura: 428,5 mm,Profundidad: 311 mm', '140000', '10', 'Negro', 'image-1702344739769.png', 2),
+(18, 'Rog Zephyrus Duo', 'Marca: ASUS,Nombre del modelo: ROG Zephyrus Dúo 16 (2022),Tamaño de pantalla:40,64 centímetros,Coprocesador de gráficos: NVIDIA GeForce RTX 3060,Velocidad de la CPU: 4,7 GHz,Tamaño del disco duro: 2 TB,Sistema operativo: Inicio de Windows 11,Procesador: AMD Ryzen 7 6800H', '3000000', '30', 'Negro', 'image-1702344968806.png', 2),
+(19, 'Logitech G502', 'Tipo de mouse: De juego,Con cable: si,Resolución del sensor: 16000 dpi,Interfaces: USB,Con luces: Sí,Con rueda de desplazamiento: Sí,Con Bluetooth: No', '60000', '15', 'Negro', 'image-1702345151382.png', 2);
 
 -- --------------------------------------------------------
 
@@ -130,7 +130,8 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `producto_categoria_id_foreign` (`categoria_id`) USING BTREE;
 
 --
 -- Indices de la tabla `users`
@@ -159,6 +160,16 @@ ALTER TABLE `producto`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD CONSTRAINT `producto_categoria_id_foreign` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
