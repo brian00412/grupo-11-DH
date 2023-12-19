@@ -98,9 +98,22 @@ const usersController = {
                 }
             });
     },
-
-
     datosUser: async (req, res) => {
+        const users = await db.User.findAll({
+            
+        });
+        let data = [];
+
+        users.forEach(user => {
+            const userData = {
+                id: user.id,
+                firstName: user.firstName,
+                email: user.email,
+                detalle: `http://localhost:8001/api/users/${user.id}`
+            }
+
+            data.push(userData);
+        });
         const Users = await db.User.findAll({ raw: true })
 
         const response = {
@@ -109,10 +122,38 @@ const usersController = {
                 total: Users.length,
                 url: '/users'
             },
-            data: Users
+            data: data
         }
         return res.status(200).json(response)
-    }
+    },
+    detail: async (req, res) => {
+        try {
+            const id = req.params.id;
+            const user = await db.User.findByPk(id, { attributes: { exclude: ['password', 'category'] } });
+
+            if (!user) {
+                return res.status(404).json({ error: 'Usuario no encontrado' });
+            }
+
+            const userInfo = {
+                id: user.id,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                email: user.email,
+                image: user.image
+            };
+
+            const response = {
+                user: userInfo,
+                imageURL: `http://localhost:8001/images/users/${user.image}`
+            };
+
+            return res.status(200).json(response);
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ error: 'Error interno del servidor' });
+        }
+    },
 }
 
 
