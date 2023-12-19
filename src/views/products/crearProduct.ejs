@@ -37,13 +37,10 @@
             </div>
             <div>
                 <label for="category">Categoria: </label>
-                <input type="text" name="category" id="category" ><br>
-                <span class="warning" id="categoryWarning"></span>
-                <% if (typeof errors !=='undefined' && errors.category ) { %>
-                    
-                    <%= errors.category.msg %>
-
-                        <% } %>
+                <select name="category" id="category">
+                    <option value="1">Electrodoméstico</option>
+                    <option value="2">Gamer</option>
+                </select>
             </div>
             <div>
                 <label for="price">Precio: </label>

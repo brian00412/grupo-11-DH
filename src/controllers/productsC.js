@@ -80,6 +80,7 @@ const productController = {
             include: [{ association: "categoria" }]
         })
             .then(product => {
+                console.log(product)
                 res.render("products/editarProducto", { product })
             })
             .catch(error => {

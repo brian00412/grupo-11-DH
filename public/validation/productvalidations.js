@@ -2,7 +2,7 @@ window.onload = function () {
     const formProducto = document.querySelector(".crearP");
 
     //  span para cada campo
-    const campos = ["name", "description", "category", "price", "descuento", "color", "image"];
+    const campos = ["name", "description", "price", "descuento", "color", "image"];
     campos.forEach(campo => {
         const span = document.createElement("span");
         span.className = "warning";

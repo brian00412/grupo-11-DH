@@ -50,14 +50,14 @@
 
                             <% } %>
                 </div>
-                <div>
+                <div class="category">
                     <label for="category">Categoria: </label>
-                    <input type="text" name="category" id="category" value="<%= product.categoria_id%>"><br>
-                    <% if (typeof errors !=='undefined' && errors.category ) { %>
+                    <select name="category" id="category" value="<%= product.categoria_id %>">
+                        <option value="2">Gamer</option>
+                        <option value="1">Electrodoméstico</option>
+                    </select>
 
-                        <%= errors.category.msg %>
 
-                            <% } %>>
                 </div>
                 <div>
                     <label for="color">Color: </label>
